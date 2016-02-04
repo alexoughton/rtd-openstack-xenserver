@@ -1,2 +1,2 @@
 # rtd-openstack-xenserver
-Guide for setting-up OpenStack with XenServer FNARG!
+Guide for setting-up OpenStack with XenServer
