@@ -16,6 +16,7 @@
 14. `# vim /etc/sysconfig/selinux`
 
    `SELINUX=permissive`
+
 15. `# yum update`
 16. `# yum install open-vm-tools`
 17. `# vim /etc/udev/rules.d/90-persistent-net.rules`
@@ -23,6 +24,7 @@
 
    `SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"`
    `SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"`
+
 18. `# cd /etc/sysconfig/network-scripts`
 19. `# mv ifcfg-eno16777984 ifcfg-eth0`
 20. `# mv ifcfg-eno33557248 ifcfg-eth1`
@@ -42,9 +44,11 @@
   172.16.0.196 block1 block1.openstack.lab.eco.rackspace.com
   172.16.0.197 object1 object1.openstack.lab.eco.rackspace.com
   172.16.0.198 object2 object2.openstack.lab.eco.rackspace.com`
+
 27. `# vim /etc/chrony.conf`
 
    `Allow 172.16.0.0/24`
+   
 28. `# systemctl restart chronyd.service`
 29. `# yum install centos-release-openstack-liberty`
 30. `# yum install python-openstackclient openstack-selinux`
