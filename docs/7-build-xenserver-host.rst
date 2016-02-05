@@ -28,9 +28,9 @@ This page is not based on the OpenStack Installation Guide.
 14. Reboot the server to start XenServer. The first boot will take a very long time. It will appear to hang a couple of times, but wait for it to reach the user interface.
 
 15. On a Windows workstation, go to http://xenserver.org/open-source-virtualization-download.html
-16. Download XenCenter Windows Management Console, and install it
-17. Download XenServer 6.5 SP1 (under Service Packs), and keep it safe in a directory
-18. Download all of the public hotfixes for XenServer 6.5 SP1, and also keep them safe in a directory
+16. Download XenCenter Windows Management Console, and install it.
+17. Download XenServer 6.5 SP1 (under Service Packs), and keep it safe in a directory.
+18. Download all of the public hotfixes for XenServer 6.5 SP1, and also keep them safe in a directory.
 
 19. Launch XenCenter, and click add new server:
 
