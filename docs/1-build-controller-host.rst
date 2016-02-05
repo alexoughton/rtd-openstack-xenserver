@@ -38,7 +38,8 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 14. If running the control node on VMWare, install the VM tools::
 
      # yum install open-vm-tools
-15. We need persistent network interface names, so we'll configure udev to give us these.  Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
+15. We need persistent network interface names, so we'll configure udev to give us these. Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
+
      # vim /etc/udev/rules.d/90-persistent-net.rules
 
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
