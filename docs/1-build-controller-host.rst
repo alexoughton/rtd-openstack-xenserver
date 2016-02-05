@@ -21,6 +21,7 @@
 
      # setenforce 0
      # vim /etc/sysconfig/selinux
+     
        SELINUX=permissive
 15. # yum update
 16. # yum install open-vm-tools
