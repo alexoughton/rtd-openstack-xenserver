@@ -105,9 +105,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 23. Restart the Chrony service::
 
     # systemctl restart chronyd.service
-29. Enable the OpenStack-Liberty yum repository::
+24. Enable the OpenStack-Liberty yum repository::
 
     # yum install centos-release-openstack-liberty
-30. Install the OpenStack client and SELINUX support::
+25. Install the OpenStack client and SELINUX support::
 
     # yum install python-openstackclient openstack-selinux
