@@ -12,7 +12,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-ntp-controller.h
 http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 
 1. In this guide, I am using a Virtual Machine running on a VMWare hypervisor as my control node. If you are doing the same, you must ensure that the vSwitches on the hypervisor have "promiscuous mode" enabled.
-2. Boot with CentOS 7.2.1511 DVD.
+2. Boot the control node with the CentOS 7.2.1511 DVD.
 3. Set your time zone and language.
 4. For "Software Selection", set this to "Infrastructure Server".
 5. Keep automatic partitioning. Allow to install only on first disk.
@@ -32,14 +32,18 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      # vim /etc/sysconfig/selinux
 
        SELINUX=permissive
-15. # yum update
-16. # yum install open-vm-tools
+13. Update all packages on the server::
 
-17. # vim /etc/udev/rules.d/90-persistent-net.rules
- Change these MAC addresses to match your own::
+     # yum update
+14. If running the control node on VMWare, install the VM tools::
 
-  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
-  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
+     # yum install open-vm-tools
+15. We need persistent network interface names, so we'll configure udev to give us these ::
+     # vim /etc/udev/rules.d/90-persistent-net.rules
+ Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
+
+  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
+  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
 18. # cd /etc/sysconfig/network-scripts
 19. # mv ifcfg-eno16777984 ifcfg-eth0
 20. # mv ifcfg-eno33557248 ifcfg-eth1
