@@ -11,12 +11,12 @@
 8. Set root password
 9. Reboot and remove ISO
 10. SSH in to server as root
-11. Stop and disable the firewalld service::
-.. code-block: none
+11. Stop and disable the firewalld service
 
+.. code-block: none
      # systemctl disable firewalld.service
      # systemctl stop firewalld.service
-     
+
 13. # setenforce 0
 14. # vim /etc/sysconfig/selinux
 SELINUX=permissive
