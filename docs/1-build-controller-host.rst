@@ -56,7 +56,14 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 17. Modify the interface configuration files, replacing any instances of eno00000001 and eno00000002 (or whatever your interface names are) with eth0 and eth1 respectively::
 
      # vim ifcfg-eth0
+
+       NAME=eth0
+       DEVICE=eth0
+
      # vim ifcfg-eth1
+
+       NAME=eth1
+       DEVICE=eth1
 18. Reboot the control node::
 
      # systemctl reboot
