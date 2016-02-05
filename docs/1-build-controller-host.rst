@@ -11,7 +11,7 @@
 8. Set root password
 9. Reboot and remove ISO
 10. SSH in to server as root
-11. Stop and disable the firewalld service
+11. Stop and disable the firewalld service::
 
      .. codeblock: none
      # systemctl disable firewalld.service
