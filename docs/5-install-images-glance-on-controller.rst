@@ -9,6 +9,8 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-install.html
 
 http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 
+Step 9 has specific changes for the use of XenServer.
+
 1. Open the MySQL client and create the keystone database. Replace \*GLANCE_DBPASS\* with your own::
 
 	  # mysql
@@ -89,12 +91,12 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 8. Add glance API version settings to the client authentication files::
 
 	  # echo "export OS_IMAGE_API_VERSION=2" | tee -a admin-openrc.sh demo-openrc.sh
-9. Upload a sample image to the glance service::
+9. **Upload a sample image to the glance service**::
 
     # source admin-openrc.sh
     # wget http://ca.downloads.xensource.com/OpenStack/cirros-0.3.4-x86_64-disk.vhd.tgz
     # glance image-create --name "cirros-xen" --container-format ovf --disk-format vhd --property vm_mode=xen --visibility public --file cirros-0.3.4-x86_64-disk.vhd.tgz
-23. Confirm that the image has been uploaded::
+10. Confirm that the image has been uploaded::
 
      # glance image-list
 
@@ -102,4 +104,4 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
         | ID                                   | Name           |
         +--------------------------------------+----------------+
         | 1e710e0c-0fb6-4425-b196-4b66bfac495e | cirros-xen     |
-        +--------------------------------------+----------------+	
+        +--------------------------------------+----------------+
