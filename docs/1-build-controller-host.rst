@@ -12,6 +12,7 @@
 9. Reboot and remove ISO
 10. SSH in to server as root
 11. Stop and disable the firewalld service::
+
      .. highlight: none
      systemctl disable firewalld.service
      systemctl stop firewalld.servvice
