@@ -11,14 +11,14 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 
 Step 9 has specific changes for the use of XenServer.
 
-1. Open the MySQL client and create the keystone database. Replace \*GLANCE_DBPASS\* with your own::
+1. Open the MySQL client and create the keystone database. Replace ``*GLANCE_DBPASS*`` with your own::
 
 	  # mysql
       > create database glance;
       > grant all privileges on glance.* to 'glance'@'localhost' identified by '*GLANCE_DBPASS*';
       > grant all privileges on glance.* to 'glance'@'%' identified by '*GLANCE_DBPASS*';
       > quit
-2. Create the "glance" user, role, service and endpoints. Provide \*GLANCE_PASS\* when prompted::
+2. Create the "glance" user, role, service and endpoints. Provide ``*GLANCE_PASS*`` when prompted::
 
     # source admin-openrc.sh
     # openstack user create --domain default --password-prompt glance
@@ -30,7 +30,7 @@ Step 9 has specific changes for the use of XenServer.
 3. Install glance packages::
 
 	  # yum install openstack-glance python-glance python-glanceclient
-4. Configure glance-api. Replace \*GLANCE_DBPASS\* and \*GLANCE_PASS\* with your own::
+4. Configure glance-api. Replace ``*GLANCE_DBPASS*`` and ``*GLANCE_PASS*`` with your own::
 
 	  # vim /etc/glance/glance-api.conf
 
@@ -57,7 +57,7 @@ Step 9 has specific changes for the use of XenServer.
 	    [DEFAULT]
 	    notification_driver = noop
 
-5. Configure glance-registry. Replace \*GLANCE_DBPASS\* and \*GLANCE_PASS\* with your own::
+5. Configure glance-registry. Replace ``*GLANCE_DBPASS*`` and ``*GLANCE_PASS*`` with your own::
 
 	  # vim /etc/glance/glance-registry.conf
 
