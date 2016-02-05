@@ -78,12 +78,12 @@ This page is not based on the OpenStack Installation Guide.
 33. Create the OpenStack Integration Bridge network::
 
      # xe network-create name-label=openstack-int-network
-31. Obtain the bridge name of the new network. Write this down as ``*XAPI_BRIDGE*``, as this will be needed later::
+34. Obtain the bridge name of the new network. Write this down as ``*XAPI_BRIDGE*``, as this will be needed later::
 
      # xe network-list name-label=openstack-int-network params=bridge
 
        bridge ( RO)    : xapi0
-32. Find the UUID of the ISO library created earlier::
+35. Find the UUID of the ISO library created earlier::
 
      # xe sr-list
 
@@ -128,10 +128,10 @@ This page is not based on the OpenStack Installation Guide.
 
 * In my example, the UUID is ``f04950c1-ee7b-2ccb-e3e2-127a5bffc5a6``.
 
-33. Set a parameter on the ISO library. Replace ``*UUID*`` with the UUID found above::
+36. Set a parameter on the ISO library. Replace ``*UUID*`` with the UUID found above::
 
      # xe sr-param-set uuid=*UUID* other-config:i18n-key=local-storage-iso
-34. Update the system hosts file with entries for all nodes::
+37. Update the system hosts file with entries for all nodes::
 
      # vi /etc/hosts
 
