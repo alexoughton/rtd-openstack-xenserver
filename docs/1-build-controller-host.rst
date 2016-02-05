@@ -3,24 +3,25 @@
 1. Build Controller Host
 ========================
 
-1. Note: If using VMWare hypervisor to run the controller host as a VM, you must enable promiscuous mode on the vSwitches.
+1. In this guide, I am using a Virtual Machine running on a VMWare hypervisor as my control node. If you are doing the same, you must ensure that the vSwitches on the hypervisor have "promiscuous mode" enabled.
 2. Boot with CentOS 7.2.1511 DVD.
-3. Set timezone
-4. Software selection: Infrastructure server
+3. Set your time zone and language.
+4. For "Software Selection", set this to "Infrastructure Server".
 5. Keep automatic partitioning. Allow to install only on first disk.
-6. Set IPv4 and hostname. Disable IPv6. Give connection eth1 name.
-7. Begin installation
-8. Set root password
-9. Reboot and remove ISO
-10. SSH in to server as root
+6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth1".
+7. Click on "Begin Installation".
+8. Set a good root password.
+9. Once installation is complete, reboot the server, and remove the DVD/ISO from the server.
+10. SSH in to server as root.
 11. Stop and disable the firewalld service::
 
      # systemctl disable firewalld.service
      # systemctl stop firewalld.service
+12. Disable SELINUX::
 
-13. # setenforce 0
-14. # vim /etc/sysconfig/selinux
-SELINUX=permissive
+     # setenforce 0
+     # vim /etc/sysconfig/selinux
+       SELINUX=permissive
 15. # yum update
 16. # yum install open-vm-tools
 
