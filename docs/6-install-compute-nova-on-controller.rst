@@ -7,7 +7,7 @@ This page is based on the following OpenStack Installation Guide pages:
 
 http://docs.openstack.org/liberty/install-guide-rdo/nova-controller-install.html
 
-1. Open the MySQL client and create the "nova" database. Replace ``*NOVA_DBPASS`` with your own::
+1. Open the MySQL client and create the "nova" database. Replace ``*NOVA_DBPASS*`` with your own::
 
     # mysql
 
