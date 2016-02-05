@@ -13,8 +13,8 @@
 10. SSH in to server as root
 11. Stop and disable the firewalld service::
 
-    SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
-    SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
+     SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
+     SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
 13. # setenforce 0
 14. # vim /etc/sysconfig/selinux
 SELINUX=permissive
