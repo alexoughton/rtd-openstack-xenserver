@@ -1,6 +1,10 @@
 1. Build Controller Host
 ========================
 
+.. image:: https://readthedocs.org/projects/openstack-xenserver/badge/?version=latest
+:target: http://openstack-xenserver.readthedocs.org/en/latest/?badge=latest
+:alt: Documentation Status
+
 1. Note: If using VMWare hypervisor to run the controller host as a VM, you must enable promiscuous mode on the vSwitches.
 2. Boot with CentOS 7.2.1511 DVD.
 3. Set timezone
