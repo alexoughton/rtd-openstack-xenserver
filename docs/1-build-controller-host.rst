@@ -38,12 +38,11 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 14. If running the control node on VMWare, install the VM tools::
 
      # yum install open-vm-tools
-15. We need persistent network interface names, so we'll configure udev to give us these ::
+15. We need persistent network interface names, so we'll configure udev to give us these.  Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
      # vim /etc/udev/rules.d/90-persistent-net.rules
- Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
 
-  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
-  SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
+       SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
+       SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
 18. # cd /etc/sysconfig/network-scripts
 19. # mv ifcfg-eno16777984 ifcfg-eth0
 20. # mv ifcfg-eno33557248 ifcfg-eth1
