@@ -60,31 +60,31 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 19. SSH back in as root after the reboot.
 20. Check that ifconfig now shows eth0 and eth1::
 
-    # ifconfig
-      eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-              ether 00:0c:29:d9:36:46  txqueuelen 1000  (Ethernet)
-              RX packets 172313  bytes 34438137 (32.8 MiB)
-              RX errors 0  dropped 0  overruns 0  frame 0
-              TX packets 7298  bytes 1552292 (1.4 MiB)
-              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+     # ifconfig
+       eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+               ether 00:0c:29:d9:36:46  txqueuelen 1000  (Ethernet)
+               RX packets 172313  bytes 34438137 (32.8 MiB)
+               RX errors 0  dropped 0  overruns 0  frame 0
+               TX packets 7298  bytes 1552292 (1.4 MiB)
+               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-      eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-              inet 172.16.0.192  netmask 255.255.255.0  broadcast 172.16.0.255
-              inet6 fe80::20c:29ff:fed9:3650  prefixlen 64  scopeid 0x20<link>
-              ether 00:0c:29:d9:36:50  txqueuelen 1000  (Ethernet)
-              RX packets 1487929  bytes 210511596 (200.7 MiB)
-              RX errors 0  dropped 11  overruns 0  frame 0
-              TX packets 781276  bytes 4320203416 (4.0 GiB)
-              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+       eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+               inet 172.16.0.192  netmask 255.255.255.0  broadcast 172.16.0.255
+               inet6 fe80::20c:29ff:fed9:3650  prefixlen 64  scopeid 0x20<link>
+               ether 00:0c:29:d9:36:50  txqueuelen 1000  (Ethernet)
+               RX packets 1487929  bytes 210511596 (200.7 MiB)
+               RX errors 0  dropped 11  overruns 0  frame 0
+               TX packets 781276  bytes 4320203416 (4.0 GiB)
+               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-      lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
-              inet 127.0.0.1  netmask 255.0.0.0
-              inet6 ::1  prefixlen 128  scopeid 0x10<host>
-              loop  txqueuelen 0  (Local Loopback)
-              RX packets 2462286  bytes 3417529317 (3.1 GiB)
-              RX errors 0  dropped 0  overruns 0  frame 0
-              TX packets 2462286  bytes 3417529317 (3.1 GiB)
-              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+       lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+               inet 127.0.0.1  netmask 255.0.0.0
+               inet6 ::1  prefixlen 128  scopeid 0x10<host>
+               loop  txqueuelen 0  (Local Loopback)
+               RX packets 2462286  bytes 3417529317 (3.1 GiB)
+               RX errors 0  dropped 0  overruns 0  frame 0
+               TX packets 2462286  bytes 3417529317 (3.1 GiB)
+               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 21. Update the system hosts file with entries for all nodes::
 
      # vim /etc/hosts
