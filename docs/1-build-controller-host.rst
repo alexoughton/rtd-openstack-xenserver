@@ -60,15 +60,15 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 19. SSH back in as root after the reboot.
 20. Check that ifconfig now shows eth0 and eth1::
 
-  # ifconfig
-  eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+    # ifconfig
+    eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         ether 00:0c:29:d9:36:46  txqueuelen 1000  (Ethernet)
         RX packets 172313  bytes 34438137 (32.8 MiB)
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 7298  bytes 1552292 (1.4 MiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-  eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+    eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 172.16.0.192  netmask 255.255.255.0  broadcast 172.16.0.255
         inet6 fe80::20c:29ff:fed9:3650  prefixlen 64  scopeid 0x20<link>
         ether 00:0c:29:d9:36:50  txqueuelen 1000  (Ethernet)
@@ -77,7 +77,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
         TX packets 781276  bytes 4320203416 (4.0 GiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-  lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+    lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         inet 127.0.0.1  netmask 255.0.0.0
         inet6 ::1  prefixlen 128  scopeid 0x10<host>
         loop  txqueuelen 0  (Local Loopback)
@@ -98,16 +98,15 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      172.16.0.198 object2 object2.openstack.lab.eco.rackspace.com
 22. Update the "Chrony" (NTP Server) configuration to allow connections from our other nodes::
 
-    # vim /etc/chrony.conf
+     # vim /etc/chrony.conf
 
-      Allow 172.16.0.0/24
-
+    Allow 172.16.0.0/24
 23. Restart the Chrony service::
 
-    # systemctl restart chronyd.service
+     # systemctl restart chronyd.service
 24. Enable the OpenStack-Liberty yum repository::
 
-    # yum install centos-release-openstack-liberty
+     # yum install centos-release-openstack-liberty
 25. Install the OpenStack client and SELINUX support::
 
-    # yum install python-openstackclient openstack-selinux
+     # yum install python-openstackclient openstack-selinux
