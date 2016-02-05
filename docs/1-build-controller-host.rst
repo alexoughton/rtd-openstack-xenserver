@@ -14,6 +14,7 @@
 11. Stop and disable the firewalld service
 
 .. code-block: none
+
      # systemctl disable firewalld.service
      # systemctl stop firewalld.service
 
