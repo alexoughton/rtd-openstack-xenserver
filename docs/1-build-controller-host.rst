@@ -1,10 +1,6 @@
 1. Build Controller Host
 ========================
 
-.. image:: https://readthedocs.org/projects/openstack-xenserver/badge/?version=latest
-:target: http://openstack-xenserver.readthedocs.org/en/latest/?badge=latest
-:alt: Documentation Status
-
 1. Note: If using VMWare hypervisor to run the controller host as a VM, you must enable promiscuous mode on the vSwitches.
 2. Boot with CentOS 7.2.1511 DVD.
 3. Set timezone
@@ -17,8 +13,8 @@
 10. SSH in to server as root
 11. Stop and disable the firewalld service::
 
-    # systemctl disable firewalld.service
-    # systemctl stop firewalld.service
+  # systemctl disable firewalld.service
+  # systemctl stop firewalld.service
 13. # setenforce 0
 14. # vim /etc/sysconfig/selinux
 SELINUX=permissive
