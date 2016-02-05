@@ -1,6 +1,6 @@
 .. highlight:: none
 
-4. Install Identity (Keystone) on controller
+4. Install Identity (keystone) on controller
 ============================================
 
 This page is based on the following OpenStack Installation Guide pages:
@@ -15,7 +15,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-verify.html
 
 http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
 
-1. Open the MySQL client and create the keystone database. Replace ``*KEYSTONE_DBPASS*`` with your own::
+1. Open the MySQL client and create the "keystone" database. Replace ``*KEYSTONE_DBPASS*`` with your own::
 
     # mysql
       > create database keystone;

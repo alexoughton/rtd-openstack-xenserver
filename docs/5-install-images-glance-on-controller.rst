@@ -11,7 +11,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 
 Step 9 has specific changes for the use of XenServer.
 
-1. Open the MySQL client and create the keystone database. Replace ``*GLANCE_DBPASS*`` with your own::
+1. Open the MySQL client and create the "glance" database. Replace ``*GLANCE_DBPASS*`` with your own::
 
 	  # mysql
       > create database glance;
