@@ -18,7 +18,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 5. Keep automatic partitioning. Allow to install only on first disk.
 6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth1".
 
-.. image:: assets/page01-set-ip-address.png
+.. image:: https://raw.githubusercontent.com/alexoughton/rtd-openstack-xenserver/master/docs/assets/page01-set-ip-address.png
 7. Click on "Begin Installation".
 8. Set a good root password.
 9. Once installation is complete, reboot the server, and remove the DVD/ISO from the server.
