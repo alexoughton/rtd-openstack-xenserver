@@ -13,9 +13,8 @@
 10. SSH in to server as root
 11. Stop and disable the firewalld service::
 
-     .. codeblock: none
      # systemctl disable firewalld.service
-     # systemctl stop firewalld.servvice
+     # systemctl stop firewalld.service
 13. # setenforce 0
 14. # vim /etc/sysconfig/selinux
 SELINUX=permissive
