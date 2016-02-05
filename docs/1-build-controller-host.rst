@@ -14,8 +14,8 @@
 11. Stop and disable the firewalld service::
 
     :::text
-    # systemctl disable firewalld.service
-    # systemctl stop firewalld.service
+     # systemctl disable firewalld.service
+     # systemctl stop firewalld.service
 13. # setenforce 0
 14. # vim /etc/sysconfig/selinux
 SELINUX=permissive
