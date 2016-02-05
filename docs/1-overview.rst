@@ -1,6 +1,6 @@
 .. highlight:: none
 
-2. Overview
+1. Overview
 ===========
 
 Do some stuff.

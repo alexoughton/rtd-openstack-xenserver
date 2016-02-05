@@ -1,6 +1,6 @@
 .. highlight:: none
 
-1. Build Controller Host
+2. Build Controller Host
 ========================
 
 This page is based on the following OpenStack Installation Guide pages:

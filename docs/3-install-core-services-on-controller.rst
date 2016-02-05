@@ -1,6 +1,6 @@
 .. highlight:: none
 
-2. Install core services on controller
+3. Install core services on controller
 ======================================
 
 1. # yum install mariadb mariadb-server MySQL-python
@@ -31,4 +31,4 @@
 12. # systemctl enable rabbitmq-server.service
 13. # systemctl start rabbitmq-server.service
 14. # rabbitmqctl add_user openstack *RABBIT_PASS*
-# rabbitmqctl set_permissions openstac ".*" ".*" ".*"
+# rabbitmqctl set_permissions openstack ".*" ".*" ".*"
