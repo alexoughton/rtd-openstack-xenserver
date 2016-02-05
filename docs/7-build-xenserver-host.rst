@@ -60,7 +60,7 @@ This page is not based on the OpenStack Installation Guide.
 27. XenCenter will perform the installation, and reboot the server. This will take a while to complete. Click Finish when done:
 
 .. image:: assets/page07-installing.png
-28. Repeat steps 18-24 for all of the hotfixes you downloaded. Except in step 23, select "I will carry out the post-update checks myself" for ALL of the hotfixes:
+28. Repeat steps 22-27 for all of the hotfixes you downloaded. Except in step 26, select "I will carry out the post-update checks myself" for ALL of the hotfixes:
 
 .. image:: assets/page07-do-not-carry-out.png
 29. Reboot the XenServer by right-clicking it in XenCenter, and clicking on "Reboot":
