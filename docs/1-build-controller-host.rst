@@ -13,7 +13,7 @@
 10. SSH in to server as root
 11. Stop and disable the firewalld service::
 
-    :::text
+     :::text
      # systemctl disable firewalld.service
      # systemctl stop firewalld.service
 13. # setenforce 0
