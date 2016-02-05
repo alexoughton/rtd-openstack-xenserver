@@ -29,7 +29,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
 
     # systemctl enable memcached.service
     # systemctl start memcached.service
-4. Set keystone configuration parameters. Replace \*ADMIIN_TOKEN\* and \*KEYSTONE_DBPASS\* with your own::
+4. Configure keystone. Replace \*ADMIIN_TOKEN\* and \*KEYSTONE_DBPASS\* with your own::
 
     # vim /etc/keystone/keystone.conf
 
@@ -166,7 +166,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
      # openstack --os-auth-url http://controller:5000/v3 --os-project-domain-id default --os-user-domain-id default --os-project-name demo --os-username demo --os-auth-type password token issue
 * Again, if this is working, various values will be returned.
 
-17. Set up permanent authentication settings for the "admin" user. Replace \*ADMIN_PASS\* with your own::
+17. Create permanent client authentication file for the "admin" user. Replace \*ADMIN_PASS\* with your own::
 
      # vim /root/admin-openrc.sh
 
@@ -178,7 +178,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
        export OS_PASSWORD=*ADMIN_PASS*
        export OS_AUTH_URL=http://controller:35357/v3
        export OS_IDENTITY_API_VERSION=3
-18. Set up permament authentication settings for the "demo" user. Replace \*DEMO_PASS\* with your own::
+18. Create permanent client authentication file for the "demo" user. Replace \*DEMO_PASS\* with your own::
 
      # vim /root/demo-openrc.sh
 
