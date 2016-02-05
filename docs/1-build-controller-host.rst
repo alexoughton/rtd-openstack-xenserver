@@ -1,5 +1,5 @@
-Build Controller Host
-=====================
+1. Build Controller Host
+========================
 
 1. Note: If using VMWare hypervisor to run the controller host as a VM, you must enable promiscuous mode on the vSwitches.
 2. Boot with CentOS 7.2.1511 DVD.
@@ -20,10 +20,11 @@ Build Controller Host
 15. `# yum update`
 16. `# yum install open-vm-tools`
 
-17. `# vim /etc/udev/rules.d/90-persistent-net.rules`
-Change these MAC addresses to match your own:
-   `SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"`
-   `SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"`
+17. # vim /etc/udev/rules.d/90-persistent-net.rules
+  Change these MAC addresses to match your own::
+   SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:46",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
+   
+   SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:0c:29:d9:36:50",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
 18. `# cd /etc/sysconfig/network-scripts`
 19. `# mv ifcfg-eno16777984 ifcfg-eth0`
 20. `# mv ifcfg-eno33557248 ifcfg-eth1`
