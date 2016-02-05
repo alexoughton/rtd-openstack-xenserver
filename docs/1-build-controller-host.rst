@@ -1,3 +1,5 @@
+.. highlight:: none
+
 1. Build Controller Host
 ========================
 
