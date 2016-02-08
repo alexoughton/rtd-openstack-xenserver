@@ -114,3 +114,23 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
        | d42db23f-3738-48b3-8f83-279ee29e84ef | DHCP agent         | controller.openstack.lab.eco.rackspace.com  | :-)   | True           | neutron-dhcp-agent        |
        +--------------------------------------+--------------------+---------------------------------------------+-------+----------------+---------------------------+
 * The list should include the ovs agent running on ``controller`` and ``compute1-vm``.
+
+13. Create the default security group::
+
+     # nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
+     # nova secgroup-add-rule default tcp 1 65535 0.0.0.0/0
+14. Create the public network. Replace ``*PUBLIC_NETWORK_CIDR*``, ``*START_IP_ADDRESS*``, ``*END_IP_ADDRESS*`` ``*DNS_RESOLVER*`` and ``*PUBLIC_NETWORK_GATEWAY*`` with your own::
+
+     # neutron net-create public --shared --provider:physical_network public --provider:network_type flat
+     # neutron subnet-create public *PUBLIC_NETWORK_CIDR* --name public --allocation-pool start=*START_IP_ADDRESS*,end=*END_IP_ADDRESS* --dns-nameserver *DNS_RESOLVER* --gateway *PUBLIC_NETWORK_GATEWAY*
+
+15. There is a bug regarding the network's segmentation ID which needs to be fixed. This should be resolved in openstack-neutron-7.0.1, but if you are running an older version:
+
+     a. Update the `segmentation_id` field in the `neutron` database::
+
+         # mysql neutron
+           > update ml2_network_segments set segmentation_id=0;
+           > quit
+     b. Update the segmentation_id for the DHCP agent's ovs port::
+
+         # ovs-vsctl set Port $(ovs-vsctl show | grep Port | grep tap | awk -F \" ' { print $2 } ') other_config:segmentation_id=0
