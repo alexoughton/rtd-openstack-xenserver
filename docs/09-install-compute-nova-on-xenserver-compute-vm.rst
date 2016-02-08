@@ -75,7 +75,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
     # wget --no-check-certificate https://raw.githubusercontent.com/Annie-XIE/summary-os/master/rdo_xenserver_helper.sh
     # sed -i 's/dom0_ip=169.254.0.1/dom0_ip=compute1/g' rdo_xenserver_helper.sh
-5. Install the script to install the dom0 plugins::
+5. Use the script to install the dom0 nova plugins::
 
     # source rdo_xenserver_helper.sh
     # install_dom0_plugins
