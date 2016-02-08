@@ -3,7 +3,7 @@
 6. Install Compute (nova) on controller
 ========================================
 
-This page is based on the following OpenStack Installation Guide pages:
+This page is based on the following OpenStack Installation Guide page:
 
 http://docs.openstack.org/liberty/install-guide-rdo/nova-controller-install.html
 

@@ -195,14 +195,14 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
        | region_id | RegionOne                        |
        | url       | http://controller:9292           |
        +-----------+----------------------------------+
-* The list should include endpoints for `nova`, `keystone`, and `glance`. Ignore any warnings.
+* The list should include endpoints for ``nova``, ``keystone``, and ``glance``. Ignore any warnings.
 
 11. Check the nova image list::
-  
+
      # nova image-list
 
        +--------------------------------------+----------------+--------+--------------------------------------+
        | ID                                   | Name           | Status | Server                               |
        | 1e710e0c-0fb6-4425-b196-4b66bfac495e | cirros-xen     | ACTIVE |                                      |
        +--------------------------------------+----------------+--------+--------------------------------------+
-* The list should include the `cirros-xen` image previously uploaded.
+* The list should include the ``cirros-xen`` image previously uploaded.
