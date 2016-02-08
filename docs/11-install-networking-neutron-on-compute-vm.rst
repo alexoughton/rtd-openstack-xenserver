@@ -41,9 +41,9 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
       [oslo_concurrency]
       Lock_path = /var/lib/neutron/tmp
-* Make sure that any connection options under [database] are deleted or commented-out.
+* Make sure that any connection options under ``[database]`` are deleted or commented-out.
 
-* Delete or comment-out any pre-existing lines in the [keystone_authtoken] section.
+* Delete or comment-out any pre-existing lines in the ``[keystone_authtoken]`` section.
 
 3. **Configure the neutron ovs agent. Replace** ``*XAPI_BRIDGE*`` **and** ``*XENSERVER_ROOT*`` **with your own**::
 
