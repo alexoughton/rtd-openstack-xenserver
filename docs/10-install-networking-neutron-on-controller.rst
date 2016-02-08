@@ -12,10 +12,10 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
 1. Open the MySQL client and create the "glance" database. Replace ``*NEUTRON_DBPASS*`` with your own::
 
     # mysql
-	    > create database neutron;
-	    > grant all privileges on neutron.* to 'neutron'@'localhost' identified by '*NEUTRON_DBPASS*';
-	    > grant all privileges on neutron.* to 'neutron'@'%' identified by '*NEUTRON_DBPASS*';
-	    > quit
+      > create database neutron;
+      > grant all privileges on neutron.* to 'neutron'@'localhost' identified by '*NEUTRON_DBPASS*';
+      > grant all privileges on neutron.* to 'neutron'@'%' identified by '*NEUTRON_DBPASS*';
+      > quit
 2. Create the "neutron" user, role, service and endpoints. Provide ``*NEUTRON_PASS*`` when prompted::
 
     # source admin-openrc.sh
