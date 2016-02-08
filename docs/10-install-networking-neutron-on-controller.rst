@@ -87,7 +87,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       [securitygroup]
       Enable_ipset = True
 
-6. **Configure ml2's ovs plugin. Replace **``*XAPI_BRIDGE*`` **with your own**::
+6. **Configure ml2's ovs plugin. Replace** ``*XAPI_BRIDGE*`` **with your own**::
 
     # vim /etc/neutron/plugins/ml2/openvswitch_agent.ini
 
@@ -98,7 +98,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       [securitygroup]
       Firewall_driver = neutron.agent.firewall.NoopFirewallDriver
 
-7. **Configure the DHCP Agent. Replace **``*XAPI_BRIDGE*`` **with your own**::
+7. **Configure the DHCP Agent. Replace** ``*XAPI_BRIDGE*`` **with your own**::
 
     # vim /etc/neutron/dhcp_agent.ini
 
@@ -107,7 +107,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       ovs_integration_bridge = *XAPI_BRIDGE*
       dhcp_driver = neutron.agent.linux.dhcp.Dnsmasq
       enable_isolated_metadata= True
-8. Configure the metadata agent. Note that the default file already has some lines in [DEFAULT]. These need to be commented-out or deleted. Replace ``*NEUTRON_PASS*`` and ``*NEUTRON_METADATA_SECRET*`` with your own::
+8. Configure the metadata agent. Note that the default file already has some lines in ``[DEFAULT]``. These need to be commented-out or deleted. Replace ``*NEUTRON_PASS*`` and ``*NEUTRON_METADATA_SECRET*`` with your own::
 
     # vim /etc/neutron/metadata_agent.ini
 
@@ -123,7 +123,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       password = *NEUTRON_PASS*
       nova_metadata_ip = controller
       metadata_proxy_shared_secret = *NEUTRON_METADATA_SECRET*
-9. **Reconfigure nova to use neutron. Replace **``*NEUTRON_PASS*``**,** ``*NEUTRON_METADATA_SECRET*`` **and** ``*XAPI_BRIDGE*`` **with your own**::
+9. **Reconfigure nova to use neutron. Replace** ``*NEUTRON_PASS*`` **,** ``*NEUTRON_METADATA_SECRET*`` **and** ``*XAPI_BRIDGE*`` **with your own**::
 
     # vim /etc/nova/nova.conf
 
