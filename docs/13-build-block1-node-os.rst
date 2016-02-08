@@ -16,7 +16,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 3. Set your time zone and language.
 4. For "Software Selection", set this to "Infrastructure Server".
 5. Keep automatic partitioning. Allow to install only on first disk.
-6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth1".
+6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth0".
 
 .. image:: assets/page13-set-ip-address.png
 .. image:: assets/page13-disable-ipv6.png
