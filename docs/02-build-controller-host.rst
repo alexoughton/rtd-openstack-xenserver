@@ -42,18 +42,18 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 14. If running the control node on VMWare, install the VM tools::
 
      # yum install open-vm-tools
-15. We need persistent network interface names, so we'll configure udev to give us these. Replace 00:00:00:00:00:00 with the MAC addresses of your control node::
+15. We need persistent network interface names, so we'll configure udev to give us these. Replace ``00:00:00:00:00:00`` with the MAC addresses of your control node::
 
      # vim /etc/udev/rules.d/90-persistent-net.rules
 
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth1"
-16. Rename the network interface configuration files to eth0 and eth1. Replace eno00000001 and eno00000002 with the names of your control node's interfaces::
+16. Rename the network interface configuration files to eth0 and eth1. Replace ``eno00000001`` and ``eno00000002`` with the names of your control node's interfaces::
 
      # cd /etc/sysconfig/network-scripts
      # mv ifcfg-eno00000001 ifcfg-eth0
      # mv ifcfg-eno00000002 ifcfg-eth1
-17. Modify the interface configuration files, replacing any instances of eno00000001 and eno00000002 (or whatever your interface names are) with eth0 and eth1 respectively::
+17. Modify the interface configuration files, replacing any instances of ``eno00000001`` and ``eno00000002`` (or whatever your interface names are) with ``eth0`` and ``eth1`` respectively::
 
      # vim ifcfg-eth0
 
@@ -69,7 +69,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      # systemctl reboot
 
 19. SSH back in as root after the reboot.
-20. Check that ifconfig now shows eth0 and eth1::
+20. Check that ifconfig now shows ``eth0`` and ``eth1``::
 
      # ifconfig
        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
