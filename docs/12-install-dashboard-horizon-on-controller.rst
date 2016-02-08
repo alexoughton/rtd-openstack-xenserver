@@ -41,6 +41,25 @@ http://docs.openstack.org/liberty/install-guide-rdo/horizon-install.html
 
 3. There is a bug in Horizon which is breaking image metadata when editing XenServer images. This has been reported in https://bugs.launchpad.net/horizon/+bug/1539722. Until the bug is fixed, here is a quick and dirty patch to avoid the problem:
 
-   a. Bort
+    a. Open the forms.py file::
 
-   b. Bort 2
+        # vim /usr/share/openstack-dashboard/openstack_dashboard/dashboards/project/images/images/forms.py
+    b. Locate the following lines (should be lines 60 and 61)::
+
+        else:
+              container_format = 'bare'
+    c. Add the following two lines above those lines::
+
+        elif disk_format == 'vhd':
+              container_format = 'ovf'
+    d. The whole section should now read::
+
+        elif disk_format == 'vhd':
+              container_format = 'ovf'
+        else:
+              container_format = 'bare'
+
+4. Enable and restart the Apahce and memcached services::
+
+    # systemctl enable httpd.service memcached.service
+    # systemctl restart httpd.service memcached.service
