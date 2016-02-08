@@ -97,3 +97,20 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
     # systemctl enable neutron-openvswitch-agent.service
     # systemctl start neutron-openvswitch-agent.service
+9. Log on to the controller node as root.
+10. Load the "admin" credential file::
+
+    # source admin-openrc.sh
+11. Check the neutron agent list::
+
+     # neutron agent-list
+
+       +--------------------------------------+--------------------+---------------------------------------------+-------+----------------+---------------------------+
+       | id                                   | agent_type         | host                                        | alive | admin_state_up | binary                    |
+       +--------------------------------------+--------------------+---------------------------------------------+-------+----------------+---------------------------+
+       | 57c49643-3e48-4252-9665-2f22e3b93b0e | Open vSwitch agent | compute1-vm.openstack.lab.eco.rackspace.com | :-)   | True           | neutron-openvswitch-agent |
+       | 977ff9ae-96e5-4ef9-93d5-65a8541d7d25 | Metadata agent     | controller.openstack.lab.eco.rackspace.com  | :-)   | True           | neutron-metadata-agent    |
+       | ca0fb18a-b3aa-4cd1-bc5f-ba4700b4d9ce | Open vSwitch agent | controller.openstack.lab.eco.rackspace.com  | :-)   | True           | neutron-openvswitch-agent |
+       | d42db23f-3738-48b3-8f83-279ee29e84ef | DHCP agent         | controller.openstack.lab.eco.rackspace.com  | :-)   | True           | neutron-dhcp-agent        |
+       +--------------------------------------+--------------------+---------------------------------------------+-------+----------------+---------------------------+
+* The list should include the ovs agent running on ``controller`` and ``compute1-vm``.
