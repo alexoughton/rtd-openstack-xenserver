@@ -5,7 +5,7 @@
 
 This page is based on the following OpenStack Installation Guide pages:
 
-http://docs.openstack.org/liberty/install-guide-rdo/environment-networking-storage-swift.html
+http://docs.openstack.org/liberty/install-guide-rdo/environment-networking-storage-cinder.html
 
 http://docs.openstack.org/liberty/install-guide-rdo/environment-ntp-other.html
 
@@ -18,9 +18,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 5. Keep automatic partitioning. Allow to install only on first disk.
 6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth1".
 
-.. image:: assets/page02-set-ip-address.png
-.. image:: assets/page02-disable-ipv6.png
-.. image:: assets/page02-enable-interface.png
+.. image:: assets/page13-set-ip-address.png
+.. image:: assets/page13-disable-ipv6.png
+.. image:: assets/page13-enable-interface.png
 7. Click on "Begin Installation".
 8. Set a good root password.
 9. Once installation is complete, reboot the server, and remove the DVD/ISO from the server.
