@@ -66,7 +66,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/horizon-verify.html
     # systemctl enable httpd.service memcached.service
     # systemctl restart httpd.service memcached.service
 
-5. From a web browser, access http://*CONTROLLER_ADDRESS*/dashboard:
+5. From a web browser, access http://``*CONTROLLER_ADDRESS*``/dashboard:
 
 .. image:: assets/page12-login.png
 6. Log in using the admin credentials.
