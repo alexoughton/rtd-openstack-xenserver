@@ -11,7 +11,7 @@ It is also based on some steps from the following guide:
 
 https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
-**Steps 1, 3, 4, 6, and 8 have specific changes for the use of XenServer.**
+**Steps 1, 3, 4, 6, 8 and 11 have specific changes for the use of XenServer.**
 
 1. **Install the neutron and ovs packages**::
 
@@ -101,7 +101,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 10. Load the "admin" credential file::
 
     # source admin-openrc.sh
-11. Check the neutron agent list::
+11. **Check the neutron agent list**::
 
      # neutron agent-list
 
