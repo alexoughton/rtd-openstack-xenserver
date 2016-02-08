@@ -3,9 +3,11 @@
 12. Install Dashboard (horizon) on controller
 =============================================
 
-This page is based on the following OpenStack Installation Guide page:
+This page is based on the following OpenStack Installation Guide pages:
 
 http://docs.openstack.org/liberty/install-guide-rdo/horizon-install.html
+
+http://docs.openstack.org/liberty/install-guide-rdo/horizon-verify.html
 
 **Step 3 has specific changes for the use of XenServer.**
 
@@ -63,3 +65,12 @@ http://docs.openstack.org/liberty/install-guide-rdo/horizon-install.html
 
     # systemctl enable httpd.service memcached.service
     # systemctl restart httpd.service memcached.service
+
+5. From a web browser, access http://*CONTROLLER_ADDRESS*/dashboard:
+
+.. image:: assets/page12-login.png
+6. Log in using the admin credentials.
+7. In the left-hand menu, under "Admin" and then "System", click on "System Information". This will display a list of compute services and network agents:
+
+.. image:: assets/page12-system-information.png
+.. image:: assets/page12-system-information2.png

@@ -55,7 +55,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       [vnc]
       enabled = True
       vncserver_listen = 0.0.0.0
-      vncserver_proxyclient_address = *IP ADDRESS OF XENSERVER*
+      vncserver_proxyclient_address = *XENSERVER_IP*
       novncproxy_base_url = http://*CONTROLLER_ADDRESS*:6080/vnc_auto.html
 
       [glance]
