@@ -83,7 +83,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 25. Click "Begin Installation". Click on "Root Password" and set a good password.
 26. Once installation is complete, click "Reboot".
 27. SSH as root to the new VM.
-28. In XenCenter, change the DVD drive to xs-tools.iso
+28. In XenCenter, change the DVD drive to ``xs-tools.iso``:
 
 .. image:: assets/page08-xs-tools-iso.png
 29. Mount the tools ISO and install the tools::
@@ -94,7 +94,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      # rpm -Uvh xe-guest-utilities-6.5.0-1427.x86_64.rpm xe-guest-utilities-xenstore-6.5.0-1427.x86_64.rpm
      # cd ~
      # umount /mnt/cdrom
-30. In XenCenter, eject the DVD drive
+30. In XenCenter, eject the DVD drive:
 
 .. image:: assets/page08-eject.png
 31. Stop and disable the firewalld service::
