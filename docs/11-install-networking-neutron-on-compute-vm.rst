@@ -3,15 +3,19 @@
 11. Install Networking (neutron) on compute VM
 ==============================================
 
-This page is based on the following OpenStack Installation Guide page:
+This page is based on the following OpenStack Installation Guide pages:
 
 http://docs.openstack.org/liberty/install-guide-rdo/neutron-compute-install.html
+
+http://docs.openstack.org/liberty/install-guide-rdo/launch-instance.html
+
+http://docs.openstack.org/liberty/install-guide-rdo/launch-instance-networks-public.html
 
 It is also based on some steps from the following guide:
 
 https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
-**Steps 1, 3, 4, 6, 8 and 11 have specific changes for the use of XenServer.**
+**Steps 1, 3, 4, 6, 8, 11 and 14 have specific changes for the use of XenServer.**
 
 1. **Install the neutron and ovs packages**::
 
@@ -115,16 +119,16 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
        +--------------------------------------+--------------------+---------------------------------------------+-------+----------------+---------------------------+
 * The list should include the ovs agent running on ``controller`` and ``compute1-vm``.
 
-13. Create the default security group::
+12. Create the default security group::
 
      # nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
      # nova secgroup-add-rule default tcp 1 65535 0.0.0.0/0
-14. Create the public network. Replace ``*PUBLIC_NETWORK_CIDR*``, ``*START_IP_ADDRESS*``, ``*END_IP_ADDRESS*`` ``*DNS_RESOLVER*`` and ``*PUBLIC_NETWORK_GATEWAY*`` with your own::
+13. Create the public network. Replace ``*PUBLIC_NETWORK_CIDR*``, ``*START_IP_ADDRESS*``, ``*END_IP_ADDRESS*`` ``*DNS_RESOLVER*`` and ``*PUBLIC_NETWORK_GATEWAY*`` with your own::
 
      # neutron net-create public --shared --provider:physical_network public --provider:network_type flat
      # neutron subnet-create public *PUBLIC_NETWORK_CIDR* --name public --allocation-pool start=*START_IP_ADDRESS*,end=*END_IP_ADDRESS* --dns-nameserver *DNS_RESOLVER* --gateway *PUBLIC_NETWORK_GATEWAY*
 
-15. There is a bug regarding the network's segmentation ID which needs to be fixed. This should be resolved in openstack-neutron-7.0.1, but if you are running an older version:
+14. **There is a bug regarding the network's segmentation ID which needs to be fixed. This should be resolved in openstack-neutron-7.0.1, but if you are running an older version**:
 
      a. Update the `segmentation_id` field in the `neutron` database::
 
