@@ -5,7 +5,7 @@
 
 This page is not based on the OpenStack Installation Guide.
 
-1. From a web browser, access http://*CONTROLLER_ADDRESS*/dashboard.
+1. From a web browser, access http://``*CONTROLLER_ADDRESS*``/dashboard.
 2. Log in using the demo credentials.
 3. In the left-hand menu, under "Project", and then "Compute", click on "Instances".
 4. Click on "Launch Instance". Name the instance "``centos7-test``", select the "m1.small" flavor, and "boot from image". Choose the "CentOS 7 (Xen)" image. Before clicking on "Launch", click on the "Access & Security" tab:
