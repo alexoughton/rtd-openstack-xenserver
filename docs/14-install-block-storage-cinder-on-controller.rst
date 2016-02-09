@@ -30,7 +30,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-controller-install.ht
 3. Install the cinder packages::
 
     # yum install openstack-cinder python-cinderclient
-4. Configure cinder. Replace ``*SERVER_IP*``, ``*CINDER_DBPASS*``, ``*CINDER_PASS*`` and ``*RABBIT_PASS*`` with your uown::
+4. Configure cinder. Replace ``*SERVER_IP*``, ``*CINDER_DBPASS*``, ``*CINDER_PASS*`` and ``*RABBIT_PASS*`` with your own::
 
     # vim /etc/cinder/cinder.conf
 
@@ -40,7 +40,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-controller-install.ht
       [DEFAULT]
       rpc_backend = rabbit
       auth_strategy = keystone
-      my_ip = *IP OF CONTROLLER NODE*
+      my_ip = *SERVER_IP*
 
       [oslo_messaging_rabbit]
       rabbit_host = controller
@@ -63,7 +63,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-controller-install.ht
 5. Populate the cinder database::
 
     # su -s /bin/sh -c "cinder-manage db sync" cinder
-6. Reconfigrue nova for cinder::
+6. Reconfigure nova for cinder::
 
     # vim /etc/nova/nova.conf
 
