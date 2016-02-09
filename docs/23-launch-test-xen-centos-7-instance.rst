@@ -19,7 +19,7 @@ This page is not based on the OpenStack Installation Guide.
 .. image:: assets/page23-create-key.png
 .. image:: assets/page23-created.png
 6. In the left-hand menu, under "Project", and then "Compute", click on "Instances".
-7. Click on "Launch Instance". Name the instance "centos7-test", select the "m1.small" flavor, and "boot from image". Choose the "CentOS 7 (Xen)" image. Before clicking on "Launch", click on the "Access & Security" tab:
+7. Click on "Launch Instance". Name the instance "``centos7-test``", select the "m1.small" flavor, and "boot from image". Choose the "CentOS 7 (Xen)" image. Before clicking on "Launch", click on the "Access & Security" tab:
 
 .. image:: assets/page23-instance-launch.png
 8. Ensure that the key pair you just created or imported is selected, and then click on Launch:
