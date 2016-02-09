@@ -9,6 +9,8 @@ http://docs.openstack.org/liberty/install-guide-rdo/nova-compute-install.html
 
 http://docs.openstack.org/liberty/install-guide-rdo/nova-verify.html
 
+http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
+
 It is also based on some steps from the following guide:
 
 https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
@@ -112,7 +114,6 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       | 4  | nova-cert        | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:27.000000 | -               |
       | 5  | nova-compute     | compute1-vm.openstack.lab.eco.rackspace.com | nova     | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
       +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
-
 * The list should include ``compute1-vm`` running ``nova-compute``.
 
 11. Check the nova endpoints list::
