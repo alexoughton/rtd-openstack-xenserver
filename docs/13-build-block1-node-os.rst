@@ -1,7 +1,7 @@
 .. highlight:: none
 
-13. Build block1 node OS
-========================
+13. Build block1 storage node OS
+================================
 
 This page is based on the following OpenStack Installation Guide pages:
 
