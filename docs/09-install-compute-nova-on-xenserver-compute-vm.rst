@@ -83,15 +83,23 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 * Enter the XenServer root password when prompted (twice)
 * Ignore the errors related to the neutron plugins
 
-6. Enable and start the nova services::
+6. Update the LVM configuration to prevent scanning of instances' contents::
+
+    # vim /etc/lvm/lvm.conf
+
+      devices {
+         ...
+         filter = ["r/.*/"]
+
+7. Enable and start the nova services::
 
     # systemctl enable openstack-nova-compute.service
     # systemctl start openstack-nova-compute.service
-7. Log on to the controller node as root.
-8. Load the "admin" credential file::
+8. Log on to the controller node as root.
+9. Load the "admin" credential file::
 
     # source admin-openrc.sh
-9. Check the nova service list::
+10. Check the nova service list::
 
     # nova service-list
 
@@ -107,7 +115,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
 * The list should include ``compute1-vm`` running ``nova-compute``.
 
-10. Check the nova endpoints list::
+11. Check the nova endpoints list::
 
      # nova endpoints
 
@@ -197,7 +205,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
        +-----------+----------------------------------+
 * The list should include endpoints for ``nova``, ``keystone``, and ``glance``. Ignore any warnings.
 
-11. Check the nova image list::
+12. Check the nova image list::
 
      # nova image-list
 
