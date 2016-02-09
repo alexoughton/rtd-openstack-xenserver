@@ -24,7 +24,7 @@ This page is not based on the OpenStack Installation Guide.
 
 .. image:: assets/page22-disable-service.png
 9. In the left-hand menu, under "Project", and then "Compute", click on "Instances". Click on "Launch Instance".
-10. Give the instance the name "centos7-xen-build", use the flavor m1.small (for a 20GB disk), and select "Boot from image" and the "CentOS 7 ISO" image. Launch the instance:
+10. Give the instance the name "``centos7-xen-build``", use the flavor m1.small (for a 20GB disk), and select "Boot from image" and the "CentOS 7 ISO" image. Launch the instance:
 
 .. image:: assets/page22-launch-instance1.png
 11. Wait for the instance to enter "Active" state. Then click on the instance. Click on the "Console" tab, and then click on the grey "Connected (unencrypted) to: QEMU" bar so that keyboard input will be directed to the console:
@@ -57,15 +57,15 @@ This page is not based on the OpenStack Installation Guide.
 24. In the top-right of the page, click the "Create Snapshot" button:
 
 .. image:: assets/page22-create-snapshot-button.png
-25. Call the image "centos7-xen-initialkick" and click on "Create Snapshot":
+25. Call the image "``centos7-xen-initialkick``" and click on "Create Snapshot":
 
 .. image:: assets/page22-create-snapshot.png
 26. Horizon will show the "Images" page. Wait until "centos7-xen-initialkick" reaches "Active" status, and then click on the image.
 27. In the top-right drop-down, click on "Update Metadata".
-28. On the left-hand side, in the "custom" box, enter "vm_mode" and click on the + button.
-29. On the right-hand side, in the "vm_mode" box, enter "hvm".
-30. On the left-hand side, in the "custom" box, enter "hypervisor_type" and click on the + button.
-31. On the right-hand side, in the "hypervisor_type" box, enter "xen", and click on the "Save" button:
+28. On the left-hand side, in the "custom" box, enter "``vm_mode``" and click on the + button.
+29. On the right-hand side, in the "vm_mode" box, enter "``hvm``".
+30. On the left-hand side, in the "custom" box, enter "``hypervisor_type``" and click on the + button.
+31. On the right-hand side, in the "hypervisor_type" box, enter "``xen``", and click on the "Save" button:
 
 .. image:: assets/page22-update-metadata1.png
 32. In the left-hand menu, under "Project", and then "Compute", click on "Instances".
@@ -75,7 +75,7 @@ This page is not based on the OpenStack Installation Guide.
 34. Click "Terminate Instance" again to confirm:
 
 .. image:: assets/page22-terminate-instances2.png
-35. Click on "Launch Instance". Give the instance the name "centos7-xen-build", use the flavor m1.small (for a 20GB disk), and select "Boot from image" and the "centos7-xen-initialkick" image. Launch the instance:
+35. Click on "Launch Instance". Give the instance the name "``centos7-xen-build``", use the flavor m1.small (for a 20GB disk), and select "Boot from image" and the "centos7-xen-initialkick" image. Launch the instance:
 
 .. image:: assets/page22-launch-instance2.png
 36. Wait for the instance to enter "Active" state. SSH to the new instance as "root", using the root password used during setup.
@@ -146,12 +146,12 @@ This page is not based on the OpenStack Installation Guide.
 50. Clear the root bash history::
 
      # rm /root/.bash_history; history -c
-51. In horizon, click the "Create Snapshot" button next to the Instance. Name the image "CentOS 7 (Xen)":
+51. In horizon, click the "Create Snapshot" button next to the Instance. Name the image "``CentOS 7 (Xen)``":
 
 .. image:: assets/page22-create-snapshot2.png
 52. Wait for the image to go to "Active" state and then, from the drop-down box next to the image, click on "Update Metadata".
-53. On the left-hand side, in the "Custom" box, enter "xenapi_use_agent", and then click the + button.
-54. On the right-hand side, in the "xenapi_use_agent", enter "true" and then click the Save button:
+53. On the left-hand side, in the "Custom" box, enter "``xenapi_use_agent``", and then click the + button.
+54. On the right-hand side, in the "xenapi_use_agent", enter "``true``" and then click the Save button:
 
 .. image:: assets/page22-update-metadata2.png
 55. In the drop-down box next to the image, click on "Edit Image".
