@@ -1,7 +1,7 @@
 .. highlight:: none
 
-9. Install Compute (nova) on KVM Host
-=====================================
+19. Install Compute (nova) on KVM Host
+======================================
 
 This page is based on the following OpenStack Installation Guide pages:
 

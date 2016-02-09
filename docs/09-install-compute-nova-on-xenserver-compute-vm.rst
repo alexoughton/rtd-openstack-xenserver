@@ -122,7 +122,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
        WARNING: nova has no endpoint in ! Available endpoints for this service:
        +-----------+------------------------------------------------------------+
-       | nova      | Value
+       | nova      | Value                                                      |
        +-----------+------------------------------------------------------------+
        | id        | 1c07bba299254336abd0cbe27c64be83                           |
        | interface | internal                                                   |
