@@ -24,7 +24,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 7. Click on "Begin Installation".
 8. Set a good root password.
 9. Once installation is complete, reboot the server, and remove the DVD/ISO from the server.
-10. SSH in to server as root
+10. SSH in to server as root.
 11. Stop and disable the firewalld service::
 
      # systemctl disable firewalld.service
@@ -53,7 +53,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      # mv ifcfg-em2 ifcfg-eth1
      # mv ifcfg-em3 ifcfg-eth2
      # mv ifcfg-em4 ifcfg-eth3
-16. Modify the interface configuration files, replacing any instances of ``em1``,``em2``,``em3``,``em4`` (or whatever your interface names are) with ``eth0``,``eth1``,``eth2`` and ``eth3`` respectively::
+16. Modify the interface configuration files, replacing any instances of ``em1`` , ``em2`` , ``em3`` , ``em4`` (or whatever your interface names are) with ``eth0`` , ``eth1`` , ``eth2`` and ``eth3`` respectively::
 
      # vim ifcfg-eth0
 
@@ -78,7 +78,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 
      # systemctl reboot
 18. SSH back in as root after the reboot.
-19. Check that ifconfig now shows ``eth0``,``eth1``,``eth2`` and ``eth3``::
+19. Check that ifconfig now shows ``eth0`` , ``eth1`` , ``eth2`` and ``eth3``::
 
      # ifconfig
        eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500

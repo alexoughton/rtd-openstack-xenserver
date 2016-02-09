@@ -21,8 +21,8 @@ This page is not based on the OpenStack Installation Guide.
 .. image:: assets/page17-instance-console.png
 7. Once the login prompt has appeared, check that you can ping and SSH to the instance. The credentials are:
 
-    * Username: cirros
-    * Password: cubswin:)
+    * Username: ``cirros``
+    * Password: ``cubswin:)``
 
 8. In the left-hand menu, click on "Instances" again, select the "test instance" in the list and click on "Terminate Instances":
 
