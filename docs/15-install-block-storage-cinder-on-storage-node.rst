@@ -72,12 +72,11 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
       [oslo_concurrency]
       lock_path = /var/lib/cinder/tmp
 
-8. Update the tgtd.conf configuration::
+8. Update the tgtd.conf configuration. There are other lines in this file. Don't change those, just add this one::
 
     # vim /etc/tgt/tgtd.conf
-      include /var/lib/cinder/volumes/*
-* There are other lines in this file. Don't change those, just add this one.
 
+      include /var/lib/cinder/volumes/*
 9. Enable and start the tgtd and cinder services::
 
     # systemctl enable tgtd.service openstack-cinder-volume.service
