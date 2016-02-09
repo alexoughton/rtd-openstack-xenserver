@@ -32,6 +32,8 @@ http://docs.openstack.org/liberty/install-guide-rdo/nova-verify.html
       devices {
          ...
          filter = [ "a/sda/", "a/sdb/", "r/.*/"]
+* Note: Do not replace the entire "``devices``" section, only the "``filter``" line.
+
 4. Configure nova. Replace ``*SERVER_IP*``, ``*RABBIT_PASS*``, ``*NOVA_PASS*`` and ``*CONTROLLER_ADDRESS*`` with your own::
 
     # vim /etc/nova/nova.conf

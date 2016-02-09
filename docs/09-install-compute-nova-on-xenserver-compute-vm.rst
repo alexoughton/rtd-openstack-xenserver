@@ -92,6 +92,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       devices {
          ...
          filter = ["r/.*/"]
+* Note: Do not replace the entire "``devices``" section, only the "``filter``" line.
 
 7. Enable and start the nova services::
 
