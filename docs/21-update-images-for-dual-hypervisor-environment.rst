@@ -13,7 +13,7 @@ This page is not based on the OpenStack Installation Guide.
 
     # source admin-openrc.sh
     # glance image-create --name "cirros-kvm" --file cirros-0.3.4-x86_64-disk.img --disk-format qcow2 --container-format bare --visibility public --progress
-4. From a web browser, access http://*CONTROLLER_ADDRESS*/dashboard
+4. From a web browser, access http://``*CONTROLLER_ADDRESS*``/dashboard
 5. Log in using the admin credentials.
 6. In the left-hand menu, under "Admin", and then "System", click on "Images". Click on the "cirros-kvm" image:
 

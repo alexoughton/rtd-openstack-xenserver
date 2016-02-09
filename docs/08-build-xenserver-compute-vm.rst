@@ -62,7 +62,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 .. image:: assets/page08-enable-interface.png
 18. If using the NetInstall image, click on "Installation source".
 
-* Set the source to network, and then define a known-good mirror. You can use http://mirror.rackspace.com/CentOS/7.2.1511/os/x86_64/
+* Set the source to network, and then define a known-good mirror. You can use ``http://mirror.rackspace.com/CentOS/7.2.1511/os/x86_64/``.
 
 19. Click on "Installation Destination". Select "I will configure partitioning" and click on "Done":
 
