@@ -103,17 +103,17 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
     # source admin-openrc.sh
 10. Check the nova service list::
 
-    # nova service-list
+     # nova service-list
 
-      +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
-      | Id | Binary           | Host                                        | Zone     | Status  | State | Updated_at                 | Disabled Reason |
-      +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
-      | 1  | nova-consoleauth | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
-      | 2  | nova-scheduler   | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
-      | 3  | nova-conductor   | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:22.000000 | -               |
-      | 4  | nova-cert        | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:27.000000 | -               |
-      | 5  | nova-compute     | compute1-vm.openstack.lab.eco.rackspace.com | nova     | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
-      +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
+       +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
+       | Id | Binary           | Host                                        | Zone     | Status  | State | Updated_at                 | Disabled Reason |
+       +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
+       | 1  | nova-consoleauth | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
+       | 2  | nova-scheduler   | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
+       | 3  | nova-conductor   | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:22.000000 | -               |
+       | 4  | nova-cert        | controller.openstack.lab.eco.rackspace.com  | internal | enabled | up    | 2016-02-08T16:53:27.000000 | -               |
+       | 5  | nova-compute     | compute1-vm.openstack.lab.eco.rackspace.com | nova     | enabled | up    | 2016-02-08T16:53:19.000000 | -               |
+       +----+------------------+---------------------------------------------+----------+---------+-------+----------------------------+-----------------+
 * The list should include ``compute1-vm`` running ``nova-compute``.
 
 11. Check the nova endpoints list::
