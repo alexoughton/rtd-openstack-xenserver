@@ -19,7 +19,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
 
       devices {
          ...
-         filter = [ "a/sdb/", "r/.*/"]
+         filter = [ "a/sda/", "a/sdb/", "r/.*/"]
 * Note: Do not replace the entire "``devices``" section, only the "``filter``" line.
 
 3. Enable the ``centos-release-xen`` and ``epel-release`` repositories::

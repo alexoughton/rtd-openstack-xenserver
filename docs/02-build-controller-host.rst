@@ -24,7 +24,6 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 7. Click on "Begin Installation".
 8. Set a good root password.
 9. Once installation is complete, reboot the server, and remove the DVD/ISO from the server.
-
 10. SSH in to server as root.
 11. Stop and disable the firewalld service::
 
