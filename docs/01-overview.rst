@@ -54,8 +54,6 @@ pre-generate the following variables which will be referred to throughout the gu
 
 =====  =====  ======
    Inputs     Output
-------------  ------
-  A      B    A or B
 =====  =====  ======
 False  False  False
 True   False  True
