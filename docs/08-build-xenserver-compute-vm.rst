@@ -114,6 +114,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 36. Update the system hosts file with entries for all nodes::
 
      # vim /etc/hosts
+     
        172.16.0.192 controller controller.openstack.lab.eco.rackspace.com
        172.16.0.203 compute1 compute1.openstack.lab.eco.rackspace.com
        172.16.0.204 compute1-vm compute1-vm.openstack.lab.eco.rackspace.com
