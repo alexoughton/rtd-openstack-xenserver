@@ -53,9 +53,9 @@ and eth1 connected to the "management" network.
 Any IP addresses in the guide should, of course, be replaced with your own. You will also need to
 pre-generate the following variables which will be referred to throughout the guide:
 
-=============================  =====================================================
+=============================  =======================================================
  Variable                      Meaning
-=============================  =====================================================
+=============================  =======================================================
 ``*MYSQL_ROOT*``               Root password for MySQL.
 ``*KEYSTONE_DBPASS*``          Password for the ``keystone`` MySQL database.
 ``*ADMIN_TOKEN*``              A temporary token for initial connection to keystone.
@@ -75,7 +75,9 @@ pre-generate the following variables which will be referred to throughout the gu
 ``*ADMIN_PASS*``               Password for the ``admin`` identity user.
 ``*DEMO_PASS*``                Password for the ``demo`` identity user.
 ``*XAPI_BRIDGE*``              The name of the ovs bridge to be used by instances.
-=============================  =====================================================
+``*SERVER_IP*``                This refers to the IP of the server you are working on.
+``*VM_IP*``                    This refers to the IP of the XenServer "compute" VM.
+=============================  =======================================================
 
 * The ``*ADMIN_TOKEN*`` can be created by running::
 
