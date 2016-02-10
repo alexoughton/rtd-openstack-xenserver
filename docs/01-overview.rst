@@ -52,9 +52,9 @@ and eth1 connected to the "management" network.
 Any IP addresses in the guide should, of course, be replaced with your own. You will also need to
 pre-generate the following variables which will be referred to throughout the guide:
 
-============  ======
-   Inputs     Output
-============  ======
+============  =======
+Variable      Meaning
+============  =======
 False  False  False
 True   False  True
 False  True   True
@@ -62,7 +62,7 @@ True   True   True
 ============  ======
 
 ============================  =========================================================================================================================
- Variable                     Meaning
+Variable                     Meaning
 ============================  =========================================================================================================================
 ``*MYSQL_ROOT*``              Root password for MySQL
 ``*KEYSTONE_DBPASS*``         Password for the ``keystone`` MySQL database.
