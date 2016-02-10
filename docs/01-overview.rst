@@ -56,7 +56,7 @@ pre-generate the following variables which will be referred to throughout the gu
 =============================  =====================================================
  Variable                      Meaning
 =============================  =====================================================
-``*MYSQL_ROOT*``               Root password for MySQL
+``*MYSQL_ROOT*``               Root password for MySQL.
 ``*KEYSTONE_DBPASS*``          Password for the ``keystone`` MySQL database.
 ``*ADMIN_TOKEN*``              A temporary token for initial connection to keystone.
 ``*RABBIT_PASS*``              Password for the ``openstack`` rabbitmq user.
