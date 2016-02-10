@@ -74,6 +74,7 @@ pre-generate the following variables which will be referred to throughout the gu
 ``*CONTROLLER_ADDRESS*``       A DNS address for the controller server.
 ``*ADMIN_PASS*``               Password for the ``admin`` identity user.
 ``*DEMO_PASS*``                Password for the ``demo`` identity user.
+``*XAPI_BRIDGE*``              The name of the ovs bridge to be used by instances.
 =============================  =====================================================
 
 * The ``*ADMIN_TOKEN*`` can be created by running::
@@ -82,3 +83,5 @@ pre-generate the following variables which will be referred to throughout the gu
 * For ``*XENSERVER_ROOT*``, do not use a password you're not comfortable placing in plaintext in the nova configuration.
 
 * For ``*CONTROLLER_ADDRESS*``, ensure that this is an address which you can reach from your workstation.
+
+* For ``*XAPI_BRIDGE*``, this won't be determined until later in the builld process. You should write it down for later use once it is defined.
