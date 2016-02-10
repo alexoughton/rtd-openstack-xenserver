@@ -31,43 +31,43 @@ http://docs.openstack.org/liberty/install-guide-rdo/nova-controller-install.html
 
     # vim /etc/nova/nova.conf
 
-    [database]
-    connection = mysql://nova:*NOVA_DBPASS*@controller/nova
+      [database]
+      connection = mysql://nova:*NOVA_DBPASS*@controller/nova
 
-    [DEFAULT]
-    rpc_backend = rabbit
-    auth_strategy = keystone
-    my_ip = *SERVER_IP*
-    network_api_class = nova.network.neutronv2.api.API
-    security_group_api = neutron
-    linuxnet_interface_driver = nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver
-    firewall_driver = nova.virt.firewall.NoopFirewallDriver
-    enabled_apis = osapi_compute,metadata
+      [DEFAULT]
+      rpc_backend = rabbit
+      auth_strategy = keystone
+      my_ip = *SERVER_IP*
+      network_api_class = nova.network.neutronv2.api.API
+      security_group_api = neutron
+      linuxnet_interface_driver = nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver
+      firewall_driver = nova.virt.firewall.NoopFirewallDriver
+      enabled_apis = osapi_compute,metadata
 
-    [oslo_messaging_rabbit]
-    rabbit_host = controller
-    rabbit_userid = openstack
-    rabbit_password = *RABBIT_PASS*
+      [oslo_messaging_rabbit]
+      rabbit_host = controller
+      rabbit_userid = openstack
+      rabbit_password = *RABBIT_PASS*
 
-    [keystone_authtoken]
-    auth_uri = http://controller:5000
-    auth_url = http://controller:35357
-    auth_plugin = password
-    project_domain_id = default
-    user_domain_id = default
-    project_name = service
-    username = nova
-    password = *NOVA_PASS*
+      [keystone_authtoken]
+      auth_uri = http://controller:5000
+      auth_url = http://controller:35357
+      auth_plugin = password
+      project_domain_id = default
+      user_domain_id = default
+      project_name = service
+      username = nova
+      password = *NOVA_PASS*
 
-    [vnc]
-    vncserver_listen = $my_ip
-    vncserver_proxyclient_address = $my_ip
+      [vnc]
+      vncserver_listen = $my_ip
+      vncserver_proxyclient_address = $my_ip
 
-    [glance]
-    host = controller
+      [glance]
+      host = controller
 
-    [oslo_concurrency]
-    lock_path = /var/lib/nova/tmp
+      [oslo_concurrency]
+      lock_path = /var/lib/nova/tmp
 5. Populate the nova database::
 
     # su -s /bin/sh -c "nova-manage db sync" nova
