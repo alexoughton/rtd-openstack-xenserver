@@ -38,27 +38,14 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-messaging.html
       [client]
       user=root
       password=*MYSQLROOTPASSWORD*
-6. Install MongoDB::
-
-    # yum install mongodb-server mongodb
-7. Set some needed MongoDB configuration parameters::
-
-    # vim /etc/mongod.conf
-
-      bind_ip = 172.16.0.192
-      smallfiles = true
-8. Enable and start the MongoDB service::
-
-    # systemctl enable mongod.service
-    # systemctl start mongod.service
-9. Install RabbitMQ::
+6. Install RabbitMQ::
 
      # yum install rabbitmq-server
-10. Enable and start the RabbitMQ service::
+7. Enable and start the RabbitMQ service::
 
      # systemctl enable rabbitmq-server.service
      # systemctl start rabbitmq-server.service
-11. Create the "openstack" RabbitMQ user::
+8. Create the "openstack" RabbitMQ user::
 
      # rabbitmqctl add_user openstack *RABBIT_PASS*
      # rabbitmqctl set_permissions openstack ".*" ".*" ".*"
