@@ -129,7 +129,7 @@ This page is not based on the OpenStack Installation Guide.
 
 53. Delete the static network configuration file::
 
-     # /etc/sysconfig/network-scripts/ifcfg-eth0
+     # rm /etc/sysconfig/network-scripts/ifcfg-eth0
 54. Clear the root bash history::
 
      # rm /root/.bash_history; history -c
