@@ -63,9 +63,9 @@ False  True   True
 True   True   True
 =====  =====  ======
 
-===========================   =======
+============================  =========================================================================================================================
  Variable                     Meaning
----------------------------   -------
+============================  =========================================================================================================================
 ``*MYSQL_ROOT*``              Root password for MySQL
 ``*KEYSTONE_DBPASS*``         Password for the ``keystone`` MySQL database.
 ``*ADMIN_TOKEN*``             A temporary token for initial connection to keystone. Can be created by running ``openssl rand -hex 10``.
@@ -84,4 +84,4 @@ True   True   True
 ``*CONTROLLER_ADDRESS*``      A DNS address for the controller server which can be reached from your workstation.
 ``*ADMIN_PASS*``              Password for the ``admin`` identity user.
 ``*DEMO_PASS*``               Password for the ``demo`` identity user.
-===========================   =======
+============================  =========================================================================================================================
