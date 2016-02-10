@@ -53,7 +53,7 @@ Any IP addresses in the guide should, of course, be replaced with your own. You 
 pre-generate the following variables which will be referred to throughout the guide:
 
 ============  =======
-Variable      Meaning
+ Variable     Meaning
 ============  =======
 False  False  False
 True   False  True
