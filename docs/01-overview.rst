@@ -74,7 +74,6 @@ True   True   True
 ``*NOVA_PASS*``               Password for the ``nova`` identity user.
 ``*NEUTRON_DBPASS*``          Password for the ``neutron`` MySQL database.
 ``*NEUTRON_PASS*``            Password for the ``neutron`` identity user.
-``*NEUTRON_METADATA_SECRET*`` Random secret string for the metadata service.
 ``*CINDER_DBPASS*``           Password for the ``cinder`` MySQL database.
 ``*CINDER_PASS*``             Password for the ``cinder`` identity user.
 ``*XENSERVER_ROOT*``          Root password for XenServer. Do not use a password you're not comfortable placing in plaintext in the nova configuration.
@@ -83,3 +82,5 @@ True   True   True
 ``*ADMIN_PASS*``              Password for the ``admin`` identity user.
 ``*DEMO_PASS*``               Password for the ``demo`` identity user.
 ============================  =========================================================================================================================
+
+``*NEUTRON_METADATA_SECRET*`` Random secret string for the metadata service.
