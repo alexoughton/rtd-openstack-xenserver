@@ -8,7 +8,7 @@ which can be found at http://docs.openstack.org/liberty/install-guide-rdo/. Howe
 only deals with the use of the "KVM" hypervisor, and does not cover the use of "XenServer" hypervisor.
 
 There are many circumstances in which it may be desirable to build an OpenStack Liberty XenServer
-environment, however in my efforts to do so, I have found the available online documentation
+environment. However, in my efforts to do so, I have found the available online documentation
 regarding using XenServer with OpenStack to be inadequate, outdated or just plain incorrect.
 Specifically, during this project I experienced issues with:
 
@@ -24,10 +24,11 @@ Specifically, during this project I experienced issues with:
 * Neutron bug affecting the use of OpenvSwitch (Required for XenServer)
 * VNC console connectivity
 
-This guide is heavily based on the OpenStack foundation's guide, however it does not go
-into the same level of detail. Their guide should be considered the superior one, and the
-"master" guide. However, this guide can be referenced in order to highlight the differences
-when using XenServer.
+This guide is heavily based on the OpenStack foundation's guide. It does not go
+into the same level of detail, but does highlight the differences when using
+XenServer instead of KVM. Their guide should be considered the superior one, and the
+"master" guide, and I recommend reading their guide if you have no familiarity with
+OpenStack at all.
 
 Some elements of this guide are also based on the following blog post:
 https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
