@@ -21,13 +21,13 @@ This page is not based on the OpenStack Installation Guide.
 7. In the top-right drop-down, click on "Update Metadata":
 
 .. image:: assets/page21-update-metadata.png
-8. On the left-hand side, in the "custom" box, enter "hypervisor_type", and then click on the + button:
+8. On the left-hand side, in the "custom" box, enter "``hypervisor_type``", and then click on the + button:
 
 .. image:: assets/page21-hypervisor-type.png
-10. Now, on the right-hand side, in the "hypervisor_type" box, enter "kvm" and click "Save":
+10. Now, on the right-hand side, in the "hypervisor_type" box, enter "``kvm``" and click "Save":
 
 .. image:: assets/page21-kvm.png
 11. In the left-hand menu, under "Admin", and then "System", again click on "Images". This time click on the "cirros-xen" image.
-12. Again click on "Update Metadata" in the drop-down. Follow the same steps, but set "hypervisor_type" to "xen":
+12. Again click on "Update Metadata" in the drop-down. Follow the same steps, but set "hypervisor_type" to "``xen``":
 
 .. image:: assets/page21-xen.png
