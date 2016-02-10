@@ -45,6 +45,11 @@ Later pages in this guide deal with adding a KVM hypervisor to the environment. 
 changes which I found to be necessary in order to support a dual hypervisor-type environment (i.e
 the use of XenServer and KVM in the same OpenStack).
 
+Finally, there are pages regarding the creation of CentOS 7 images for both hypervisors.
+These pages highlight some differences in the image-creation process for both hypervisors,
+including the package and partitioning requirements to support automatic disk resizing
+and injection of SSH keys for the root user.
+
 Two networks are required, a "public" network (which instances will be connected to for their
 day-to-day traffic), and a "management" network, which our OpenStack servers will use for their
 connectivity. Any servers with connections to both will have eth0 connected to the "public" network,
@@ -53,9 +58,9 @@ and eth1 connected to the "management" network.
 Any IP addresses in the guide should, of course, be replaced with your own. You will also need to
 pre-generate the following variables which will be referred to throughout the guide:
 
-=============================  =======================================================
+=============================  =====================================================
  Variable                      Meaning
-=============================  =======================================================
+=============================  =====================================================
 ``*MYSQL_ROOT*``               Root password for MySQL.
 ``*KEYSTONE_DBPASS*``          Password for the ``keystone`` MySQL database.
 ``*ADMIN_TOKEN*``              A temporary token for initial connection to keystone.
@@ -75,9 +80,7 @@ pre-generate the following variables which will be referred to throughout the gu
 ``*ADMIN_PASS*``               Password for the ``admin`` identity user.
 ``*DEMO_PASS*``                Password for the ``demo`` identity user.
 ``*XAPI_BRIDGE*``              The name of the ovs bridge to be used by instances.
-``*SERVER_IP*``                This refers to the IP of the server you are working on.
-``*VM_IP*``                    This refers to the IP of the XenServer "compute" VM.
-=============================  =======================================================
+=============================  =====================================================
 
 * The ``*ADMIN_TOKEN*`` can be created by running::
 
@@ -87,3 +90,11 @@ pre-generate the following variables which will be referred to throughout the gu
 * For ``*CONTROLLER_ADDRESS*``, ensure that this is an address which you can reach from your workstation.
 
 * For ``*XAPI_BRIDGE*``, this won't be determined until later in the builld process. You should write it down for later use once it is defined.
+
+Also note that any instance of "``*SERVER_IP*``" refers to the server you are currently working on. Any instance of
+"``*VM_IP*``" refers to the IP of the XenServer compute VM.
+
+One final note: I do disable SELINUX in this guide, for simplicity. This is a personal choice,
+but I know that some people do choose to run SELINUX on their systems. The guide does include
+the installation of SELINUX support for openstack, so you should be able to set this back to "``ENFORCING``",
+even after performing the installation with this set to "``PERMISSIVE``". I have not tested this.
