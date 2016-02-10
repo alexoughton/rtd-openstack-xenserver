@@ -52,21 +52,12 @@ and eth1 connected to the "management" network.
 Any IP addresses in the guide should, of course, be replaced with your own. You will also need to
 pre-generate the following variables which will be referred to throughout the guide:
 
-============  =======
- Variable     Meaning
-============  =======
-False  False  False
-True   False  True
-False  True   True
-True   True   True
-============  =======
-
-=============================  =========================================================================================================================
+=============================  =====================================================
  Variable                      Meaning
-=============================  =========================================================================================================================
+=============================  =====================================================
 ``*MYSQL_ROOT*``               Root password for MySQL
 ``*KEYSTONE_DBPASS*``          Password for the ``keystone`` MySQL database.
-``*ADMIN_TOKEN*``              A temporary token for initial connection to keystone. Can be created by running ``openssl rand -hex 10``.
+``*ADMIN_TOKEN*``              A temporary token for initial connection to keystone.
 ``*RABBIT_PASS*``              Password for the ``openstack`` rabbitmq user.
 ``*GLANCE_DBPASS*``            Password for the ``glance`` MySQL database.
 ``*GLANCE_PASS*``              Password for the ``glance`` identity user.
@@ -77,9 +68,18 @@ True   True   True
 ``*NEUTRON_METADATA_SECRET*``  Random secret string for the metadata service.
 ``*CINDER_DBPASS*``            Password for the ``cinder`` MySQL database.
 ``*CINDER_PASS*``              Password for the ``cinder`` identity user.
-``*XENSERVER_ROOT*``           Root password for XenServer. Do not use a password you're not comfortable placing in plaintext in the nova configuration.
+``*XENSERVER_ROOT*``           Root password for XenServer.
 ``*XENSERVER_IP*``             IP address of XenServer.
-``*CONTROLLER_ADDRESS*``       A DNS address for the controller server which can be reached from your workstation.
+``*CONTROLLER_ADDRESS*``       A DNS address for the controller server.
 ``*ADMIN_PASS*``               Password for the ``admin`` identity user.
 ``*DEMO_PASS*``                Password for the ``demo`` identity user.
-=============================  =========================================================================================================================
+=============================  =====================================================
+
+* The ``*ADMIN_TOKEN*`` can be created by running::
+
+   # openssl rand -hex 10
+* For ``*XENSERVER_ROOT*``, do not use a password you're not comfortable placing in plaintext
+in the nova configuration.
+
+* For ``*CONTROLLER_ADDRESS*``, ensure that this is an address which you can reach from your
+workstation.
