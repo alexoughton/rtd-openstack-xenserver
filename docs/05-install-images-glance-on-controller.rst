@@ -13,7 +13,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 
 1. Open the MySQL client and create the "glance" database. Replace ``*GLANCE_DBPASS*`` with your own::
 
-	  # mysql
+    # mysql
       > create database glance;
       > grant all privileges on glance.* to 'glance'@'localhost' identified by '*GLANCE_DBPASS*';
       > grant all privileges on glance.* to 'glance'@'%' identified by '*GLANCE_DBPASS*';
