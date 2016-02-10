@@ -78,8 +78,6 @@ pre-generate the following variables which will be referred to throughout the gu
 * The ``*ADMIN_TOKEN*`` can be created by running::
 
    # openssl rand -hex 10
-* For ``*XENSERVER_ROOT*``, do not use a password you're not comfortable placing in plaintext
-in the nova configuration.
+* For ``*XENSERVER_ROOT*``, do not use a password you're not comfortable placing in plaintext in the nova configuration.
 
-* For ``*CONTROLLER_ADDRESS*``, ensure that this is an address which you can reach from your
-workstation.
+* For ``*CONTROLLER_ADDRESS*``, ensure that this is an address which you can reach from your workstation.
