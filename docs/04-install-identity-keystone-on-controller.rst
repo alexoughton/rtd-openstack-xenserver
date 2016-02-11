@@ -110,44 +110,48 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
                </IfVersion>
            </Directory>
        </VirtualHost>
-8. Set up temportary connection parameters. Replace ``*ADMIN_TOKEN*`` with your own::
+8. Enable and start the Apache service::
+
+    # systemctl enable httpd.service
+    # systemctl start httpd.service
+9. Set up temportary connection parameters. Replace ``*ADMIN_TOKEN*`` with your own::
 
     # export OS_TOKEN=*ADMIN_TOKEN*
     # export OS_URL=http://controller:35357/v3
     # export OS_IDENTITY_API_VERSION=3
-9. Create keystone service and endpoints::
+10. Create keystone service and endpoints::
 
     # openstack service create --name keystone --description "OpenStack Identity" identity
     # openstack endpoint create --region RegionOne identity public http://controller:5000/v2.0
     # openstack endpoint create --region RegionOne identity internal http://controller:5000/v2.0
     # openstack endpoint create --region RegionOne identity admin http://controller:35357/v2.0
 
-10. Create the "admin" project, user and role. Provide your ``*ADMIN_PASS*`` twice when prompted::
+11. Create the "admin" project, user and role. Provide your ``*ADMIN_PASS*`` twice when prompted::
 
      # openstack project create --domain default --description "Admin Project" admin
      # openstack user create --domain default --password-prompt admin
      # openstack role create admin
      # openstack role add --project admin --user admin admin
 
-11. Create the "service" project::
+12. Create the "service" project::
 
      # openstack project create --domain default --description "Service Project" service
-12. Create the "demo" project, user and role. Provide your ``*DEMO_PASS*`` twice when prompted::
+13. Create the "demo" project, user and role. Provide your ``*DEMO_PASS*`` twice when prompted::
 
      # openstack project create --domain default --description "Demo Project" demo
      # openstack user create --domain default --password-prompt demo
      # openstack role create user
      # openstack role add --project demo --user demo user
 
-13. Disable authentication with the admin token::
+14. Disable authentication with the admin token::
 
      # vim /usr/share/keystone/keystone-dist-paste.ini
 * Remove ``admin_token_auth`` from ``[pipeline:public_api]``, ``[pipeline:admin_api]`` and ``[pipeline:api_v3]``
 
-14. Disable the temporary connection parameters::
+15. Disable the temporary connection parameters::
 
      # unset OS_TOKEN OS_URL
-15. Test authentication for the "admin" user. Provide ``*ADMIN_PASS*`` when prompted::
+16. Test authentication for the "admin" user. Provide ``*ADMIN_PASS*`` when prompted::
 
      # openstack --os-auth-url http://controller:35357/v3 --os-project-domain-id default --os-user-domain-id default --os-project-name admin --os-username admin --os-auth-type password token issue
 * If this is working, various values will be returned (yours will be different)::
@@ -161,12 +165,12 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
     | user_id    | 31766cbe74d541088c6ba2fd24654034 |
     +------------+----------------------------------+
 
-16. Test authentication for the "demo" user. Provide \*DEMO_PASS\ when prompted::
+17. Test authentication for the "demo" user. Provide \*DEMO_PASS\ when prompted::
 
      # openstack --os-auth-url http://controller:5000/v3 --os-project-domain-id default --os-user-domain-id default --os-project-name demo --os-username demo --os-auth-type password token issue
 * Again, if this is working, various values will be returned.
 
-17. Create permanent client authentication file for the "admin" user. Replace ``*ADMIN_PASS*`` with your own::
+18. Create permanent client authentication file for the "admin" user. Replace ``*ADMIN_PASS*`` with your own::
 
      # vim /root/admin-openrc.sh
 
@@ -178,7 +182,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
        export OS_PASSWORD=*ADMIN_PASS*
        export OS_AUTH_URL=http://controller:35357/v3
        export OS_IDENTITY_API_VERSION=3
-18. Create permanent client authentication file for the "demo" user. Replace ``*DEMO_PASS*`` with your own::
+19. Create permanent client authentication file for the "demo" user. Replace ``*DEMO_PASS*`` with your own::
 
      # vim /root/demo-openrc.sh
 
@@ -190,7 +194,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
        export OS_PASSWORD=*DEMO_PASS*
        export OS_AUTH_URL=http://controller:5000/v3
        export OS_IDENTITY_API_VERSION=3
-19. Test authentication with the permanent settings::
+20. Test authentication with the permanent settings::
 
      # source admin-openrc.sh
      # openstack token issue
