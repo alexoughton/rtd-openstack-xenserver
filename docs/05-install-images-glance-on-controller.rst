@@ -29,60 +29,61 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
     # openstack endpoint create --region RegionOne image admin http://controller:9292
 3. Install glance packages::
 
-	  # yum install openstack-glance python-glance python-glanceclient
+    # yum install openstack-glance python-glance python-glanceclient
 4. Configure glance-api. Replace ``*GLANCE_DBPASS*`` and ``*GLANCE_PASS*`` with your own::
 
-	  # vim /etc/glance/glance-api.conf
+    # vim /etc/glance/glance-api.conf
 
-	    [database]
-	    connection = mysql://glance:*GLANCE_DBPASS*@controller/glance
+      [database]
+      connection = mysql://glance:*GLANCE_DBPASS*@controller/glance
 
-	    [keystone_authtoken]
-	    auth_uri = http://controller:5000
-	    auth_url = http://controller:35357
-	    auth_plugin = password
-	    project_domain_id = default
-	    user_domain_id = default
-	    project_name = service
-	    username = glance
-	    password =  *GLANCE_PASS*
+      [keystone_authtoken]
+      auth_uri = http://controller:5000
+      auth_url = http://controller:35357
+      auth_plugin = password
+      project_domain_id = default
+      user_domain_id = default
+      project_name = service
+      username = glance
+      password =  *GLANCE_PASS*
 
       [paste_deploy]
-	    flavor = keystone
+      flavor = keystone
 
-	    [glance_store]
-	    default_store = file
-	    filesystem_store_datadir = /var/lib/glance/images/
+      [glance_store]
+      default_store = file
+      filesystem_store_datadir = /var/lib/glance/images/
 
-	    [DEFAULT]
-	    notification_driver = noop
+      [DEFAULT]
+      notification_driver = noop
 
 5. Configure glance-registry. Replace ``*GLANCE_DBPASS*`` and ``*GLANCE_PASS*`` with your own::
 
-	  # vim /etc/glance/glance-registry.conf
+    # vim /etc/glance/glance-registry.conf
 
-	    [database]
-	    connection = mysql://glance:*GLANCE_DBPASS*@controller/glance
+      [database]
+      connection = mysql://glance:*GLANCE_DBPASS*@controller/glance
 
-	    [keystone_authtoken]
-	    auth_uri = http://controller:5000
-	    auth_url = http://controller:35357
-	    auth_plugin = password
-	    project_domain_id = default
-	    user_domain_id = default
-	    project_name = service
-	    username = glance
-	    password = *GLANCE_PASS*
+      [keystone_authtoken]
+      auth_uri = http://controller:5000
+      auth_url = http://controller:35357
+      auth_plugin = password
+      project_domain_id = default
+      user_domain_id = default
+      project_name = service
+      username = glance
+      password = *GLANCE_PASS*
 
-	    [paste_deploy]
-	    flavor=keystone
+      [paste_deploy]
+      flavor=keystone
 
-	    [DEFAULT]
-	    Notification_driver = noop
+      [DEFAULT]
+      notification_driver = noop
 
 6. Populate the glance database::
 
-	  # su -s /bin/sh -c "glance-manage db_sync" glance
+    # su -s /bin/sh -c "glance-manage db_sync" glance
+* Note: "``No handlers could be found for logger``" warnings are normal, and can be ignored.
 
 7. Enable and start the glance service::
 
@@ -90,7 +91,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
     # systemctl start openstack-glance-api.service openstack-glance-registry.service
 8. Add glance API version settings to the client authentication files::
 
-	  # echo "export OS_IMAGE_API_VERSION=2" | tee -a admin-openrc.sh demo-openrc.sh
+    # echo "export OS_IMAGE_API_VERSION=2" | tee -a admin-openrc.sh demo-openrc.sh
 9. **Upload a sample image to the glance service**::
 
     # source admin-openrc.sh
