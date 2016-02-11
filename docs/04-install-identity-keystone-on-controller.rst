@@ -29,7 +29,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
 
     # systemctl enable memcached.service
     # systemctl start memcached.service
-4. Configure keystone. Replace ``*ADMIIN_TOKEN*`` and ``*KEYSTONE_DBPASS*`` with your own::
+4. Configure keystone. Replace ``*ADMIN_TOKEN*`` and ``*KEYSTONE_DBPASS*`` with your own::
 
     # vim /etc/keystone/keystone.conf
 
