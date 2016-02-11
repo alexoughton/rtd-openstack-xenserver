@@ -31,21 +31,26 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-messaging.html
 4. Initialize MariaDB security. Say 'yes' to all prompts, and set a good root password::
 
     # mysql_secure_installation
-5. Set up the MySQL client configuration::
+5. Set up the MySQL client configuration. Replace ``*MYSQL_ROOT*`` with your own::
 
     # vim /root/.my.cnf
 
       [client]
       user=root
-      password=*MYSQLROOTPASSWORD*
-6. Install RabbitMQ::
+      password=*MYSQL_ROOT*
+6. Confirm that you are able to connect to MySQL::
+
+    # mysql
+
+      > quit
+7. Install RabbitMQ::
 
      # yum install rabbitmq-server
-7. Enable and start the RabbitMQ service::
+8. Enable and start the RabbitMQ service::
 
      # systemctl enable rabbitmq-server.service
      # systemctl start rabbitmq-server.service
-8. Create the "openstack" RabbitMQ user::
+9. Create the "openstack" RabbitMQ user::
 
      # rabbitmqctl add_user openstack *RABBIT_PASS*
      # rabbitmqctl set_permissions openstack ".*" ".*" ".*"

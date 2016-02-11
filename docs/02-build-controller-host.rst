@@ -14,7 +14,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 1. In this guide, I am using a Virtual Machine running on a VMWare hypervisor as my control node. If you are doing the same, you must ensure that the vSwitches on the hypervisor have "promiscuous mode" enabled.
 2. Boot the control node with the CentOS 7.2.1511 DVD.
 3. Set your time zone and language.
-4. For "Software Selection", set this to "Infrastructure Server".
+4. For "Software Selection", set this to "``Infrastructure Server``".
 5. Keep automatic partitioning. Allow to install only on first disk.
 6. Set the controller's IPv4 address and hostname. Disable IPv6. Give the connection the name "eth1".
 
