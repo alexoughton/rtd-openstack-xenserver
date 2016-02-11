@@ -47,7 +47,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/glance-verify.html
 	    username = glance
 	    password =  *GLANCE_PASS*
 
-    	[paste_deploy]
+      [paste_deploy]
 	    flavor = keystone
 
 	    [glance_store]
