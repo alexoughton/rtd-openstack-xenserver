@@ -98,3 +98,13 @@ One final note: I do disable SELINUX in this guide, for simplicity. This is a pe
 but I know that some people do choose to run SELINUX on their systems. The guide does include
 the installation of SELINUX support for openstack, so you should be able to set this back to "``ENFORCING``",
 even after performing the installation with this set to "``PERMISSIVE``". I have not tested this.
+
+About the Author
+----------------
+
+My name is Alex Oughton, and I work with OpenStack clouds, as well as dedicated hosting solutions.
+My work doesn't involve the actual deployment of OpenStack, and so this guide was developed during
+a self-learning exercise. If you have any feedback regarding this guide, including any suggestions
+or fixes, please do contact me on Twitter: http://twitter.com/alexoughton.
+
+You can also directly contribute to this guide through its github: https://github.com/alexoughton/rtd-openstack-xenserver.
