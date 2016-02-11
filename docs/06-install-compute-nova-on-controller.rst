@@ -26,7 +26,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/nova-controller-install.html
     # openstack endpoint create --region RegionOne compute admin http://controller:8774/v2/%\(tenant_id\)s
 3. Install nova packages::
 
-    # yum install openstack-nova-api openstack-nova-cert openstack-nova-conductor openstack-nova-console openstack-nova-novncproxy openstack-nova-scheduler   python-novaclient
+    # yum install openstack-nova-api openstack-nova-cert openstack-nova-conductor openstack-nova-console openstack-nova-novncproxy openstack-nova-scheduler python-novaclient
 4. Configure nova. Replace ``*NOVA_DBPASS*``, ``*NOVA_PASS*``, ``*SERVER_IP*`` and ``*RABIT_PASS*`` with your own::
 
     # vim /etc/nova/nova.conf
