@@ -88,7 +88,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       flat_networks = public
 
       [securitygroup]
-      Enable_ipset = True
+      enable_ipset = True
+
+* Note: The ``tenant_network_types`` value is also intentionally left blank.
 
 6. **Configure ml2's ovs plugin. Replace** ``*XAPI_BRIDGE*`` **with your own**::
 
@@ -99,7 +101,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
       bridge_mappings = public:br-eth0
 
       [securitygroup]
-      Firewall_driver = neutron.agent.firewall.NoopFirewallDriver
+      firewall_driver = neutron.agent.firewall.NoopFirewallDriver
 
 7. **Configure the DHCP Agent. Replace** ``*XAPI_BRIDGE*`` **with your own**::
 
