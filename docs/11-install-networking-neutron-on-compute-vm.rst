@@ -92,7 +92,9 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
     # source rdo_xenserver_helper.sh
     # install_dom0_plugins
+
 * Enter the XenServer root password when prompted (twice).
+* If you are prompted whether or not to overwrite a file under /tmp, answer ``y``.
 
 7. Restart the nova service::
 
