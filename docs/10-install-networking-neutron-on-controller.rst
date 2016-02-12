@@ -71,6 +71,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
 
       [oslo_concurrency]
       lock_path = /var/lib/neutron/tmp
+
+* Note: The ``service_plugins`` value is intentionally left blank, and is used to disable these plugins.
+
 5. **Configure the ml2 plugin**::
 
     # vim /etc/neutron/plugins/ml2/ml2_conf.ini
