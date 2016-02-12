@@ -97,7 +97,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
     # vim /etc/neutron/plugins/ml2/openvswitch_agent.ini
 
       [ovs]
-      integration_driver = *XAPI_BRIDGE*
+      integration_bridge = *XAPI_BRIDGE*
       bridge_mappings = public:br-eth0
 
       [securitygroup]
