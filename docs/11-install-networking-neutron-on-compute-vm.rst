@@ -44,7 +44,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       password = *NEUTRON_PASS*
 
       [oslo_concurrency]
-      Lock_path = /var/lib/neutron/tmp
+      lock_path = /var/lib/neutron/tmp
 * Make sure that any connection options under ``[database]`` are deleted or commented-out.
 
 * Delete or comment-out any pre-existing lines in the ``[keystone_authtoken]`` section.
