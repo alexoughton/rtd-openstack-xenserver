@@ -151,7 +151,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/neutron-controller-install.h
      # ln -s /etc/neutron/plugins/ml2/ml2_conf.ini /etc/neutron/plugin.ini
 11. Populate the neutron database::
 
-     # su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf -config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head" neutron
+     # su -s /bin/sh -c "neutron-db-manage --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/plugins/ml2/ml2_conf.ini upgrade head" neutron
 12. **Enable and start the ovs service**::
 
      # systemctl enable openvswitch.service

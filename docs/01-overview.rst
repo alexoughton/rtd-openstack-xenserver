@@ -102,7 +102,7 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
-Feb 12 2016: Various clarifications. Extended identity's token expiration time.
+Feb 12 2016: Various clarifications. Extended identity's token expiration time. Correct syntax for neutron ovs configuration on controller. Correct syntax when populating neutron database.
 
 About the Author
 ----------------
