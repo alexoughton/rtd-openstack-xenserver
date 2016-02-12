@@ -50,9 +50,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
       [revoke]
       driver = sql
 
-* Note: I have extended token expiration 24-hours, due to issues I experienced with large images
-timing-out during the saving process. You may wish to use a shorter expiration, depending
-on your security requirements.
+* Note: I have extended token expiration to 24-hours, due to issues I experienced with large images timing-out during the saving process. You may wish to use a shorter expiration, depending on your security requirements.
 
 5. Populate the keystone database::
 
