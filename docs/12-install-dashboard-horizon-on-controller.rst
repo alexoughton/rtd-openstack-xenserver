@@ -14,9 +14,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/horizon-verify.html
 1. Install horizon packages::
 
     # yum install openstack-dashboard
-2. Configure horizon. Replace ``*TIME_ZONE*`` with your own.::
+2. Configure horizon. Replace ``*TIME_ZONE*`` with your own (for example "``America/Chicago``")::
 
-    # vim /etc/openstack-dasboard/local_settings
+    # vim /etc/openstack-dashboard/local_settings
 
       OPENSTACK_CONTROLLER = "controller"
       ALLOWED_HOSTS = ['*', ]
