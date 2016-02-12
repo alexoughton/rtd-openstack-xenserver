@@ -45,9 +45,15 @@ http://docs.openstack.org/liberty/install-guide-rdo/keystone-openrc.html
       [token]
       provider = uuid
       driver = memcache
+      expiration = 86400
 
       [revoke]
       driver = sql
+
+* Note: I have extended token expiration 24-hours, due to issues I experienced with large images
+timing-out during the saving process. You may wish to use a shorter expiration, depending
+on your security requirements.
+
 5. Populate the keystone database::
 
     # su -s /bin/sh -c "keystone-manage db_sync" keystone

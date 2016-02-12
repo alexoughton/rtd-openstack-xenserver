@@ -99,6 +99,11 @@ but I know that some people do choose to run SELINUX on their systems. The guide
 the installation of SELINUX support for openstack, so you should be able to set this back to "``ENFORCING``",
 even after performing the installation with this set to "``PERMISSIVE``". I have not tested this.
 
+Changelog
+---------
+
+Feb 12 2016: Various clarifications. Extended identity's token expiration time.
+
 About the Author
 ----------------
 
