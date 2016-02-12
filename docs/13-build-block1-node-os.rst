@@ -11,7 +11,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-ntp-other.html
 
 http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 
-1. The block1 node will need to have a large second disk on which to store the cinder volumes. It will only need a connection to the Management Network.
+1. The block1 node will need to have a large second disk on which to store the cinder volumes. You may also wish to give it a large amount of storage at /var/lib/cinder/conversion (or /) if you will be writing large images to cinder volumes. It will only need a connection to the Management Network.
 2. Boot the control node with the CentOS 7.2.1511 DVD.
 3. Set your time zone and language.
 4. For "Software Selection", set this to "Infrastructure Server".

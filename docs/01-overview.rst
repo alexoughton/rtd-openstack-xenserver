@@ -102,7 +102,13 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
-Feb 12 2016: Various clarifications. Extended identity's token expiration time. Correct syntax for neutron ovs configuration on controller. Correct syntax when populating neutron database.
+Feb 12 2016:
+ * Create changelog.
+ * Various clarifications.
+ * Extended identity's token expiration time.
+ * Correct syntax for neutron ovs configuration on controller.
+ * Correct syntax when populating neutron database.
+ * Add note regarding large storage requirements for cinder image-to-volume conversion.
 
 About the Author
 ----------------
