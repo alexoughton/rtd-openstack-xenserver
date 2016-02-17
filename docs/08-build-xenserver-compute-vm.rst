@@ -158,7 +158,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 
 43. Enable auto power-on for the XenServer pool. Replace ``*POOL_UUID*`` with your own::
 
-     # xe pool-param-set uuid=POOL_UUID other-config:auto_poweron=true
+     # xe pool-param-set uuid=*POOL_UUID* other-config:auto_poweron=true
 44. Obtain the UUID of the "compute VM"::
 
      # xe vm-list name-label='compute'
