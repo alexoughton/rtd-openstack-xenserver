@@ -114,7 +114,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 36. Update the system hosts file with entries for all nodes::
 
      # vim /etc/hosts
-     
+
        172.16.0.192 controller controller.openstack.lab.eco.rackspace.com
        172.16.0.203 compute1 compute1.openstack.lab.eco.rackspace.com
        172.16.0.204 compute1-vm compute1-vm.openstack.lab.eco.rackspace.com
@@ -143,3 +143,31 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
 40. Install the OpenStack client and SELINUX support::
 
      # yum install python-openstackclient openstack-selinux
+
+41. SSH to the XenServer as root.
+42. Obtain the UUID of the XenServer pool::
+
+     # xe pool-list
+
+       uuid ( RO)                : f824b628-1696-9ebe-5a5a-d1f9cf117158
+                 name-label ( RW):
+           name-description ( RW):
+                     master ( RO): b11f5aaf-d1a5-42fb-8335-3a6451cec4c7
+                 default-SR ( RW): 271e0f43-8b03-50c5-a08a-9c7312741378
+* Note: In my case, the UUID is ``f824b628-1696-9ebe-5a5a-d1f9cf117158``.
+
+43. Enable auto power-on for the XenServer pool. Replace ``*POOL_UUID*`` with your own::
+
+     # xe pool-param-set uuid=POOL_UUID other-config:auto_poweron=true
+44. Obtain the UUID of the "compute VM"::
+
+     # xe vm-list name-label='compute'
+
+       uuid ( RO)           : 706ba8eb-fe5f-8da2-9090-3a5b009ce1c4
+            name-label ( RW): compute
+           power-state ( RO): running
+* Note: In my case, the UUID is ``706ba8eb-fe5f-8da2-9090-3a5b009ce1c4``.
+
+45. Enable auto power-on for the "compute" VM. Replace ``*VM_UUID*`` with your own::
+
+     # xe vm-param-set uuid=*VM_UUID* other-config:auto_poweron=true

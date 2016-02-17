@@ -142,3 +142,27 @@ This page is not based on the OpenStack Installation Guide.
        172.16.0.196 block1 block1.openstack.lab.eco.rackspace.com
        172.16.0.197 object1 object1.openstack.lab.eco.rackspace.com
        172.16.0.198 object2 object2.openstack.lab.eco.rackspace.com
+38. Relax XSM SR checks. Needed for migration of instances with Cinder volumes::
+
+     # vi /etc/xapi.conf
+
+       relax-xsm-sr-check = true
+39. Symlink a directory of the SR to /images. Needed for instance migration::
+
+     # LOCAL_SR=$(xe sr-list name-label="Local storage" --minimal)
+     # IMG_DIR="/var/run/sr-mount/$LOCAL_SR/images"
+     # mkdir -p "$IMG_DIR"
+     # ln -s "$IMG_DIR" /images
+40. Set up SSH key authentication for the root user. Needed for instance migration. Press ENTER to give default response to all prompts::
+
+     # ssh-keygen
+
+       Generating public/private rsa key pair.
+       Enter file in which to save the key (/root/.ssh/id_rsa):
+       Enter passphrase (empty for no passphrase):
+       Enter same passphrase again:
+       Your identification has been saved in /root/.ssh/id_rsa.
+       Your public key has been saved in /root/.ssh/id_rsa.pub.
+
+     # cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+* Note: If you are building an additional XenServer host, you will instead copy the contents of /root/.ssh from your first XenServer host to your additional hosts.
