@@ -102,6 +102,14 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
+Feb 19 2016:
+ * Add fix to Horizon config for Identity v3.
+ * Fix changelog order.
+
+Feb 17 2016:
+ * Add steps to enable auto power-on of the "compute" VM on the XenServer host.
+ * Add required steps to enable migration and live migration of instances between XenServer hosts.
+
 Feb 12 2016:
  * Create changelog.
  * Various clarifications.
@@ -109,10 +117,6 @@ Feb 12 2016:
  * Correct syntax for neutron ovs configuration on controller.
  * Correct syntax when populating neutron database.
  * Add note regarding large storage requirements for cinder image-to-volume conversion.
-
-Feb 17 2016:
- * Add steps to enable auto power-on of the "compute" VM on the XenServer host.
- * Add required steps to enable migration and live migration of instances between XenServer hosts.
 
 About the Author
 ----------------

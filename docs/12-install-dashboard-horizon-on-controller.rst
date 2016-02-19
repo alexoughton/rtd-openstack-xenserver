@@ -38,6 +38,11 @@ http://docs.openstack.org/liberty/install-guide-rdo/horizon-verify.html
           'enable_fip_topology_check': False,
       }
       TIME_ZONE = "*TIME_ZONE*"
+      OPENSTACK_API_VERSIONS = {
+          "data-processing": 1.1,
+          "identity": 3,
+          "volume": 2,
+      }
 * Note 1: There are many options already present in the file. These should be left as-is.
 * Note 2: For the ``openstack_neutron_network`` block, modify the settings listed above, rather than replacing the entire block.
 
