@@ -27,7 +27,7 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
     # yum install centos-release-xen epel-release
 4. **Disable kernel updates from the centos-virt-xen repository**::
 
-    $ vim /etc/yum.repos.d/CentOS-Xen.repo
+    # vim /etc/yum.repos.d/CentOS-Xen.repo
 
       [centos-virt-xen]
       exclude=kernel*
