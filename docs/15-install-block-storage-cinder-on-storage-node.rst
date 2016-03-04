@@ -7,7 +7,7 @@ This page is based on the following OpenStack Installation Guide page:
 
 http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
 
-**Steps 3, 4, 5, 7, 8 and 9 have specific changes for the use of XenServer.**
+**Steps 3, 4, 5, 6, 8, 9 and 10 have specific changes for the use of XenServer.**
 
 1. Create the LVM volume group on the second disk::
 
@@ -22,19 +22,25 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
          filter = [ "a/sda/", "a/sdb/", "r/.*/"]
 * Note: Do not replace the entire "``devices``" section, only the "``filter``" line.
 
-3. **Enable the** ``centos-release-xen`` **and** ``epel-release`` **repositories**::
+3. **Enable the** ``centos-virt-xen`` **and** ``epel-release`` **repositories**::
 
     # yum install centos-release-xen epel-release
-4. **Install special packages needed from outside of the openstack-liberty repositories**::
+4. **Disable kernel updates from the centos-virt-xen repository**::
+
+    $ vim /etc/yum.repos.d/CentOS-Xen.repo
+
+      [centos-virt-xen]
+      exclude=kernel*
+5. **Install special packages needed from outside of the openstack-liberty repositories**::
 
     # yum install scsi-target-utils xen-runtime
-5. **Remove the** ``epel-release`` **repository again**::
+6. **Remove the** ``epel-release`` **repository again**::
 
     # yum remove epel-release
-6. Install the cinder packages::
+7. Install the cinder packages::
 
     # yum install openstack-cinder python-oslo-policy
-7. **Configure cinder. Replace** ``*CINDER_DBPASS*`` **,** ``*SERVER_IP*`` **,** ``*RABBIT_PASS*`` **and** ``*CINDER_PASS*`` **with your own**::
+8. **Configure cinder. Replace** ``*CINDER_DBPASS*`` **,** ``*SERVER_IP*`` **,** ``*RABBIT_PASS*`` **and** ``*CINDER_PASS*`` **with your own**::
 
     # vim /etc/cinder/cinder.conf
 
@@ -72,12 +78,12 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-storage-install.html
       [oslo_concurrency]
       lock_path = /var/lib/cinder/tmp
 
-8. **Update the tgtd.conf configuration. There are other lines in this file. Don't change those, just add this one**::
+9. **Update the tgtd.conf configuration. There are other lines in this file. Don't change those, just add this one**::
 
     # vim /etc/tgt/tgtd.conf
 
       include /var/lib/cinder/volumes/*
-9. **Enable and start the tgtd and cinder services**::
+10. **Enable and start the tgtd and cinder services**::
 
     # systemctl enable tgtd.service openstack-cinder-volume.service
     # systemctl start tgtd.service openstack-cinder-volume.service

@@ -102,6 +102,9 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
+Mar 4 2016:
+ * Add fix to prevent installation of kernels from Xen repository on Storage node.
+
 Feb 19 2016:
  * Add fix to Horizon config for Identity v3.
  * Fix changelog order.
