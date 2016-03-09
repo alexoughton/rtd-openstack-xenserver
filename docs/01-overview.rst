@@ -102,6 +102,9 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
+Mar 9 2016:
+ * Add note regarding case-sensitive udev rules file.
+
 Mar 4 2016:
  * Add fix to prevent installation of kernels from Xen repository on Storage node.
 

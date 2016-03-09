@@ -46,6 +46,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="em*", NAME="eth1"
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="em*", NAME="eth2"
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="em*", NAME="eth3"
+
+* Note: This file is case-sensitive, and the MAC addresses should be lower-case.
+
 15. Rename the network interface configuration files to eth0 and eth1. Replace ``em1`` , ``em2`` , ``em3`` and ``em4`` with the names of your KVM node's interfaces::
 
      # cd /etc/sysconfig/network-scripts

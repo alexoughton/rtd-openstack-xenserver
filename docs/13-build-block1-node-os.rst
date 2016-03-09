@@ -47,6 +47,9 @@ http://docs.openstack.org/liberty/install-guide-rdo/environment-packages.html
      # vim /etc/udev/rules.d/90-persistent-net.rules
 
        SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*",ATTR{address}=="00:00:00:00:00:00",ATTR{dev_id}=="0x0", ATTR{type}=="1",KERNEL=="eno*", NAME="eth0"
+
+* Note: This file is case-sensitive, and the MAC addresses should be lower-case.
+
 16. Rename the network interface configuration file to ``eth0``. Replace ``eno00000001`` with the name of your control node's interfaces::
 
      # cd /etc/sysconfig/network-scripts
