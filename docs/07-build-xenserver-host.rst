@@ -9,6 +9,8 @@ This page is not based on the OpenStack Installation Guide.
 2. Boot with XenServer 6.5 DVD.
 3. Set keyboard, agree to terms, etc.
 4. Set the installation destination to sda.
+
+.. image:: assets/page07-primary-disk.png
 5. Set VM storage to only sdb, and enable thin provisioning:
 
 .. image:: assets/page07-configure-sr.png
@@ -18,8 +20,8 @@ This page is not based on the OpenStack Installation Guide.
 9. Set a good ``*XENSERVER_ROOT*`` password. Use a password which you don't mind being plain-text readable to anyone who has root access to this system.
 10. Set the management network interface to use eth1 and configure the IPv4 addresses:
 
-.. image:: assets/page07-hostname-and-dns.png
 .. image:: assets/page07-set-ip-addresses.png
+.. image:: assets/page07-hostname-and-dns.png
 11. Set an appropriate timezone.
 12. Configure the server to use NTP, and set the server address as the controller's IP:
 

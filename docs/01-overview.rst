@@ -104,6 +104,8 @@ Changelog
 
 Mar 15 2016:
  * Add cinder configuration fix to allow volume migration.
+ * Correct screenshot ordering on XenServer host installation page.
+ * Add screenshot for primary disk selection to XenServer host installation page.
 
 Mar 9 2016:
  * Add note regarding case-sensitive udev rules file.
