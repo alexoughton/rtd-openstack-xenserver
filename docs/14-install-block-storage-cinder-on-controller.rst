@@ -41,6 +41,8 @@ http://docs.openstack.org/liberty/install-guide-rdo/cinder-controller-install.ht
       rpc_backend = rabbit
       auth_strategy = keystone
       my_ip = *SERVER_IP*
+      nova_catalog_info = compute:nova:publicURL
+      nova_catalog_admin_info = compute:nova:adminURL
 
       [oslo_messaging_rabbit]
       rabbit_host = controller

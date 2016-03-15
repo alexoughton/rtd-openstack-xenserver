@@ -102,6 +102,9 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
+Mar 15 2016:
+ * Add cinder configuration fix to allow volume migration.
+
 Mar 9 2016:
  * Add note regarding case-sensitive udev rules file.
 
