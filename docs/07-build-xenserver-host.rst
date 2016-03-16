@@ -169,6 +169,6 @@ This page is not based on the OpenStack Installation Guide.
      # cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 * Note: If you are building an additional XenServer host, you will instead copy the contents of /root/.ssh from your first XenServer host to your additional hosts.
 
-41. Reboot the XenServer host::
+41. Restart the XenServer Toolstack::
 
-     # shutdown -rf now
+     # xe-toolstack-restart

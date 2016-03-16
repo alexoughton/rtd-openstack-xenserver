@@ -106,6 +106,7 @@ Changelog
 
 Mar 16 2016:
  * Add nova and neutron configuration fixes for whole-host migration.
+ * Replace unnecesary XenServer reboot with Toolstack restart.
 
 Mar 15 2016:
  * Add cinder configuration fix to allow volume migration.
