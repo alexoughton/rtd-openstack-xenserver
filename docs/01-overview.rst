@@ -80,6 +80,9 @@ pre-generate the following variables which will be referred to throughout the gu
 ``*ADMIN_PASS*``               Password for the ``admin`` identity user.
 ``*DEMO_PASS*``                Password for the ``demo`` identity user.
 ``*XAPI_BRIDGE*``              The name of the ovs bridge to be used by instances.
+``*SERVER_IP*``                The IP of the server you are currently working on.
+``*VM_IP*``                    The IP of the "compute" VM for that hypervisor.
+``*HOST_NAME*``                The hostname of the physical hypervisor (e.g. XenServer).
 =============================  =====================================================
 
 * The ``*ADMIN_TOKEN*`` can be created by running::
@@ -91,8 +94,7 @@ pre-generate the following variables which will be referred to throughout the gu
 
 * For ``*XAPI_BRIDGE*``, this won't be determined until later in the builld process. You should write it down for later use once it is defined.
 
-Also note that any instance of "``*SERVER_IP*``" refers to the server you are currently working on. Any instance of
-"``*VM_IP*``" refers to the IP of the XenServer compute VM.
+* Any instance of "``*HOST_NAME*``" refers to the hostname of the **physical hypervisor host**. For example, this would be "compute1.openstack.lab.mycompany.com", and not "compute1-vm.openstack.lab.mycompany.com".
 
 One final note: I do disable SELINUX in this guide, for simplicity. This is a personal choice,
 but I know that some people do choose to run SELINUX on their systems. The guide does include
@@ -101,6 +103,9 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 
 Changelog
 ---------
+
+Mar 16 2016:
+ * Add nova and neutron configuration fixes for whole-host migration.
 
 Mar 15 2016:
  * Add cinder configuration fix to allow volume migration.

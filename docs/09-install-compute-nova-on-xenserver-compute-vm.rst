@@ -25,7 +25,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 2. Install nova packages::
 
     # yum install openstack-nova-compute sysfsutils
-3. Configure nova. Replace ``*XENSERVER_ROOT*``, ``*CONTROLLER_ADDRESS*``, ``*XAPI_BRIDGE*``, ``*VM_IP*``, ``*NOVA_PASS*``, ``*XENSERVER_IP*`` and ``*RABIT_PASS*`` with your own::
+3. Configure nova. Replace ``*HOST_NAME*``, ``*XENSERVER_ROOT*``, ``*CONTROLLER_ADDRESS*``, ``*XAPI_BRIDGE*``, ``*VM_IP*``, ``*NOVA_PASS*``, ``*XENSERVER_IP*`` and ``*RABIT_PASS*`` with your own::
 
     # vim /etc/nova/nova.conf
 
@@ -38,6 +38,8 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       linuxnet_interface_driver = nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver
       firewall_driver = nova.virt.firewall.NoopFirewallDriver
       compute_driver = xenapi.XenAPIDriver
+      host = HOST_NAME*
+      live_migration_retry_count=600
 
       [oslo_messaging_rabbit]
       rabbit_host = controller

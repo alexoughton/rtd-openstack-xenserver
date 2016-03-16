@@ -20,13 +20,14 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 1. **Install the neutron and ovs packages**::
 
     # yum install openstack-neutron openstack-neutron-openvswitch ebtables ipset openvswitch
-2. Configure neutron. Replace ``*RABBIT_PASS*`` and ``*NEUTRON_PASS*`` with your own::
+2. Configure neutron. Replace ``*HOST_NAME*``, ``*RABBIT_PASS*`` and ``*NEUTRON_PASS*`` with your own::
 
     # vim /etc/neutron/neutron.conf
 
       [DEFAULT]
       rpc_backend = rabbit
       auth_strategy = keystone
+      host = *HOST_NAME*
 
       [oslo_messaging_rabbit]
       rabbit_host = controller
