@@ -38,7 +38,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
       linuxnet_interface_driver = nova.network.linux_net.NeutronLinuxBridgeInterfaceDriver
       firewall_driver = nova.virt.firewall.NoopFirewallDriver
       compute_driver = xenapi.XenAPIDriver
-      host = HOST_NAME*
+      host = *HOST_NAME*
       live_migration_retry_count=600
 
       [oslo_messaging_rabbit]
