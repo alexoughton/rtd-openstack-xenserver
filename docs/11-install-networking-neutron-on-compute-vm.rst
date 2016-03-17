@@ -15,7 +15,7 @@ It is also based on some steps from the following guide:
 
 https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
-**Steps 1, 3, 4, 6, 8, 11 and 14 have specific changes for the use of XenServer.**
+**Steps 1, 3, 4, 6, 8, 11, 14 and 15 have specific changes for the use of XenServer.**
 
 1. **Install the neutron and ovs packages**::
 
@@ -141,3 +141,26 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
      b. Update the segmentation_id for the DHCP agent's ovs port::
 
          # ovs-vsctl set Port $(ovs-vsctl show | grep Port | grep tap | awk -F \" ' { print $2 } ') other_config:segmentation_id=0
+
+**15. There is a bug in Neutron which is causing available XenAPI sessions to be exhauted. I have reported this and submitted a patch in https://bugs.launchpad.net/neutron/+bug/1558721. Until the bug is fixed upstream, here is the manual patch to fix the problem:**
+
+       a. Open the neutron-rootwrap-xen-dom0 file::
+
+           # vim /usr/bin/neutron-rootwrap-xen-dom0
+       b. Locate the following lines (should start at line 117)::
+
+           result = session.xenapi.host.call_plugin(
+               host, 'netwrap', 'run_command',
+               {'cmd': json.dumps(user_args), 'cmd_input': json.dumps(cmd_input)})
+           return json.loads(result)
+
+       c. Add the following before the 'return' line. It should have the same indentation as the 'return' line::
+
+           session.xenapi.session.logout()
+       d. The whole section should now read::
+
+           result = session.xenapi.host.call_plugin(
+               host, 'netwrap', 'run_command',
+               {'cmd': json.dumps(user_args), 'cmd_input': json.dumps(cmd_input)})
+           session.xenapi.session.logout()
+           return json.loads(result)

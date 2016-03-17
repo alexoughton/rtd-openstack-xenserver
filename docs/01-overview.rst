@@ -104,6 +104,9 @@ even after performing the installation with this set to "``PERMISSIVE``". I have
 Changelog
 ---------
 
+Mar 17 2016:
+ * Add patch for neutron bug to the "install neutron on compute VM" page.
+
 Mar 16 2016:
  * Add nova and neutron configuration fixes for whole-host migration.
  * Replace unnecesary XenServer reboot with Toolstack restart.
