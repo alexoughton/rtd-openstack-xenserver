@@ -142,7 +142,7 @@ https://www.citrix.com/blogs/2015/11/30/integrating-xenserver-rdo-and-neutron/
 
          # ovs-vsctl set Port $(ovs-vsctl show | grep Port | grep tap | awk -F \" ' { print $2 } ') other_config:segmentation_id=0
 
-**15. There is a bug in Neutron which is causing available XenAPI sessions to be exhauted. I have reported this and submitted a patch in https://bugs.launchpad.net/neutron/+bug/1558721. Until the bug is fixed upstream, here is the manual patch to fix the problem:**
+**15. There is a bug in Neutron which is causing available XenAPI sessions to be exhausted. I have reported this and submitted a patch in https://bugs.launchpad.net/neutron/+bug/1558721. Until the bug is fixed upstream, here is the manual patch to fix the problem:**
 
        a. Open the neutron-rootwrap-xen-dom0 file::
 
